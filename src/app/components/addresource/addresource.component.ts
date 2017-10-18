@@ -24,6 +24,7 @@ export class AddresourceComponent implements OnInit {
   }
 
   addResource() {
+
     this.questionAdded.emit({ id: this.id,
                               name: this.name,
                               company: this.company,
@@ -33,6 +34,8 @@ export class AddresourceComponent implements OnInit {
                               salary: this.salary,
                               skills: this.skills,
                               hide: true});
+    console.log('addresource');
+    console.log(this.name);
   }
 
 }

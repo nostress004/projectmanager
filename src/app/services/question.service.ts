@@ -19,6 +19,7 @@ export class QuestionService {
 
   // Add Question to LS
   addResource(resource: Resource) {
+    console.log('addResource2');
     this.resources.unshift(resource);
 
     // Init local var
