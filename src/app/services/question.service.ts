@@ -16,7 +16,7 @@ export class QuestionService {
     }
     return this.resources;
   }
-
+  //valami
   // Add Question to LS
   addResource(resource: Resource) {
     console.log('addResource2');

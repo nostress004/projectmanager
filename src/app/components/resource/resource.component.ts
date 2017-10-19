@@ -18,7 +18,7 @@ export class ResourceComponent implements OnInit {
   ngOnInit() {
   }
 
-  removeQuestion(resource) {
+  removeResource(resource) {
     this.questionService.removeResource(resource);
   }
 

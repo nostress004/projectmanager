@@ -37,5 +37,5 @@ export class AddresourceComponent implements OnInit {
     console.log('addresource');
     console.log(this.name);
   }
-
+//valami
 }

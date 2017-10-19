@@ -28,6 +28,8 @@ import { AddresourceComponent } from './components/addresource/addresource.compo
 import { ResourceComponent } from './components/resource/resource.component';
 import { ResourceListComponent } from './components/resource-list/resource-list.component';
 
+import { QuestionService } from './services/question.service';
+
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'register', component: RegisterComponent },
@@ -70,7 +72,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule
   ],
-  providers: [AngularFireAuth, AngularFireDatabase, ClientService],
+  providers: [AngularFireAuth, AngularFireDatabase, ClientService, QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
