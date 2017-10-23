@@ -10,3 +10,14 @@ export class AddtaskComponent implements OnInit {
 
   ngOnInit() {}
 }
+export class Task {
+  id: number;
+  name: string;
+  plannedHours: number;
+  maxHours: number;
+  requiredSkills: string;
+  startDate: string;
+  dueDate: string;
+  projectLeader: string;
+}
+
