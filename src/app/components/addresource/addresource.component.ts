@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Resource } from '../../models/Resource';
-
+import { ResourceListComponent } from '../resource-list/resource-list.component';
 @Component({
   selector: 'app-addresource',
   templateUrl: './addresource.component.html',
@@ -18,24 +18,24 @@ export class AddresourceComponent implements OnInit {
   salary: number;
   skills: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addResource() {
-
-    this.questionAdded.emit({ id: this.id,
-                              name: this.name,
-                              company: this.company,
-                              email: this.email,
-                              phone: this.phone,
-                              workinghours: this.workinghours,
-                              salary: this.salary,
-                              skills: this.skills,
-                              hide: true});
+    this.questionAdded.emit({
+      id: this.id,
+      name: this.name,
+      company: this.company,
+      email: this.email,
+      phone: this.phone,
+      workinghours: this.workinghours,
+      salary: this.salary,
+      skills: this.skills,
+      hide: true
+    });
     console.log('addresource');
     console.log(this.name);
   }
-//valami
+  //valami
 }
