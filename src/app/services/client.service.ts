@@ -10,6 +10,7 @@ import { Client } from '../models/Client';
 @Injectable()
 export class ClientService {
   clients: FirebaseListObservable<any[]>;
+  í;
   client: FirebaseObjectObservable<any>;
 
   constructor(public af: AngularFireDatabase) {

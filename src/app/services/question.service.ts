@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Resource} from '../models/Resource';
+import { Resource } from '../models/Resource';
 
 @Injectable()
 export class QuestionService {
   resources: Resource[];
 
-  constructor() { }
+  constructor() {}
 
   // Get Questions from LS
   getResources() {
@@ -16,8 +16,8 @@ export class QuestionService {
     }
     return this.resources;
   }
-  //valami
-  // Add Question to LS
+
+  // Add Resource to LS
   addResource(resource: Resource) {
     console.log('addResource2');
     this.resources.unshift(resource);

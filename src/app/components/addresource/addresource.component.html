@@ -5,30 +5,53 @@
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" required>
     </div>
-
     <div class="form-group">
       <label for="email">E-mail</label>
       <input type="text" class="form-control" id="email">
     </div>
     <div class="form-group">
-      <label for="duedate">Salary</label>
-      <input type="text" class="form-control" id="duedate">
+      <label for="salary">Salary</label>
+      <input type="curr" class="form-control" id="salary">
     </div>
     <div class="form-group">
-      <label for="plannedhours">Free time</label>
-      <input type="date" class="form-control" id="plannedhours">
+      <div class="row">
+        <div class="col col-xs-6">
+          <label for="availableto">Available to</label>
+          <input type="date" class="form-control" id="availableto">
+        </div>
+        <div class="col col-xs-6">
+          <label for="availablefrom">Available from</label>
+          <input type="date" class="form-control" id="availablefrom">
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <label for="maxhours">Company</label>
-      <input type="text" class="form-control" id="maxhours">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company">
     </div>
     <div class="form-group">
-      <label for="requiredskills">Skills</label>
-      <input type="text" class="form-control" id="requiredskills">
+      <div class="row">
+        <div class="col col-xs-6">
+          <label>Choose skills that this task requires:
+            <input list="skills" name="mySkills" />
+          </label>
+        </div>
+        <div class="col col-xs-6">
+          <datalist id="skills">
+            <option value="JavaScript">
+              <option value="HTML">
+                <option value="CSS">
+                  <option value="Java">
+                    <option value="C#">
+                      <option value="SQL">
+                        <option value="Angular">
+          </datalist>
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <label for="projectleader">Working hours</label>
-      <input type="time" class="form-control" id="projectleader">
+      <label for="workhours">Working hours per day</label>
+      <input type="time" class="form-control" id="workhours">
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
 
