@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddProjectComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {
-    console.log('why isnt it owrking man?');
-  }
+  ngOnInit() {}
 }
 export class Task {
   id: number;
