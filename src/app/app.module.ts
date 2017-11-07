@@ -28,6 +28,7 @@ import { ResourceComponent } from './components/resource/resource.component';
 import { ResourceListComponent } from './components/resource-list/resource-list.component';
 
 import { QuestionService } from './services/question.service';
+import { ResourceTableComponent } from './components/resource-table/resource-table.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -58,7 +59,8 @@ export const firebaseConfig = {
     AddProjectComponent,
     AddresourceComponent,
     ResourceComponent,
-    ResourceListComponent
+    ResourceListComponent,
+    ResourceTableComponent
   ],
   imports: [
     BrowserModule,
