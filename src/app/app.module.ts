@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+//Other Imports
+
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+
 // AngularFire Imports
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -60,7 +64,8 @@ export const firebaseConfig = {
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
-    FormsModule
+    FormsModule,
+    MultiselectDropdownModule
   ],
   providers: [AngularFireAuth, AngularFireDatabase, QuestionService],
   bootstrap: [AppComponent]
