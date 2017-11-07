@@ -21,4 +21,5 @@ export class ResourceListComponent implements OnInit {
   addQuestion(resource: Resource) {
     this.questionService.addResource(resource);
   }
+
 }
