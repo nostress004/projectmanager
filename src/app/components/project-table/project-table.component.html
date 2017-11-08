@@ -1,3 +1,34 @@
-<p>
-  project-table works!
-</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" (click)="toggleCollapse(1)">1 <i id="collapseIcon1" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr id="collapse1" style="display: none">
+      <th scope="row"></th>
+      <td colspan="3">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
