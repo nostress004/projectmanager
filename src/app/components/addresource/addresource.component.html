@@ -1,15 +1,19 @@
 <div class="container">
   <h1 class="text-center">Add New Resource</h1>
-  <form (submit)="addResource()">
+  <form (submit)="addResource(form)">
     <div class="form-group">
       <div class="row">
-        <div class="col col-lg-6">
+        <div class="col col-lg-4">
           <label for="firstname">First Name</label>
           <input type="text" class="form-control" id="firstname" required>
         </div>
-        <div class="col col-lg-6">
+        <div class="col col-lg-4">
           <label for="lastname">Last Name</label>
           <input type="text" class="form-control" id="lastname" required>
+        </div>
+        <div class="col col-lg-4">
+          <label for="phone">Phone</label>
+          <input type="number" class="form-control" id="phone" required>
         </div>
       </div>
     </div>
@@ -51,10 +55,18 @@
     </div>
     <button type="submit" class=" text-center btn btn-success">Submit</button>
   </form>
-  <div class="row">
-    <label class="col-lg-2 offset-lg-4">Add skills:</label>
-    <div class="col-lg-2">
-      <ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
-    </div>
+
+  <h2>Resources:</h2>
+  <div class="container">
+    <ul class="heroes">
+      <li *ngFor="let resource of resources" class="card text-center">
+        <h4 class="card-title">
+          {{resource.firstname}} {{resource.lastname}}
+        </h4>
+        <p class="card-text"> Email: {{resource.email}}</p>
+        <p class="card-text"> Phone: {{resource.phone}}</p>
+        <a href="/addresource" class="btn btn-danger">Delete Resource</a>
+      </li>
+    </ul>
   </div>
 </div>

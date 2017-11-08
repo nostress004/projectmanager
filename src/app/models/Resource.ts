@@ -1,11 +1,14 @@
 export interface Resource {
-    id: number;
-    name: string;
-    company: string;
-    email: string;
-    phone: string;
-    workinghours: number;
-    salary: number;
-    skills: string;
-    hide: boolean;
+  id: number;
+  firstname: string;
+  lastname: string;
+  email: string;
+  salary: number;
+  company: string;
+  phone: number;
+  availablefrom: number;
+  availableto: number;
+  workinghours: number;
+  skills: string;
+  hide: boolean;
 }
