@@ -1,11 +1,12 @@
-td {
+/* td {
     text-align: center;
 }
 
 th {
     text-align: center;
-}
+} */
 
-.pagination {
-    align-items: center;
+td li {
+    list-style-type: none;
+    text-align: left;
 }

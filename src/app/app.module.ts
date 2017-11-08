@@ -31,13 +31,15 @@ import { ResourceListComponent } from './components/resource-list/resource-list.
 import { QuestionService } from './services/question.service';
 import { ResourceTableComponent } from './components/resource-table/resource-table.component';
 import { ProjectTableComponent } from './components/project-table/project-table.component';
+import { ResourceDashboardComponent } from './components/resource-dashboard/resource-dashboard.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'addproject', component: AddProjectComponent },
-  { path: 'addresource', component: AddresourceComponent }
+  { path: 'addresource', component: AddresourceComponent },
+  { path: 'resourcetable', component: ResourceTableComponent }
 ];
 
 export const firebaseConfig = {
@@ -63,7 +65,8 @@ export const firebaseConfig = {
     ResourceComponent,
     ResourceListComponent,
     ResourceTableComponent,
-    ProjectTableComponent
+    ProjectTableComponent,
+    ResourceDashboardComponent
   ],
   imports: [
     BrowserModule,
