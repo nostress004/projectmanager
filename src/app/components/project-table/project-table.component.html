@@ -1,14 +1,14 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Project name</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Username</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class="table-success">
       <th scope="row" (click)="toggleCollapse(1)">1 <i id="collapseIcon1" class="fa fa-arrow-down" aria-hidden="true"></i></th>
       <td>Mark</td>
       <td>Otto</td>
@@ -16,19 +16,29 @@
     </tr>
     <tr id="collapse1" style="display: none">
       <th scope="row"></th>
-      <td colspan="3">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
+      <td colspan="4">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
+
+    <tr class="table-warning">
+        <th scope="row" (click)="toggleCollapse(2)">1 <i id="collapseIcon2" class="fa fa-arrow-down" aria-hidden="true"></i></th>
       <td>Jacob</td>
       <td>Thornton</td>
       <td>@fat</td>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
+    <tr id="collapse2" style="display: none">
+        <th scope="row"></th>
+        <td colspan="3">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
+    </tr>
+
+    <tr class="table-danger">
+      <th scope="row" (click)="toggleCollapse(3)">1 <i id="collapseIcon3" class="fa fa-arrow-down" aria-hidden="true"></i></th>
+      <td>Larry the Bird</td>
       <td>@twitter</td>
+      <td>@fat</td>
+    </tr>
+    <tr id="collapse3" style="display: none">
+        <th scope="row"></th>
+        <td colspan="3">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
     </tr>
   </tbody>
 </table>
-<hr>

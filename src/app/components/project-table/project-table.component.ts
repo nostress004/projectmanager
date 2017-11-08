@@ -13,9 +13,7 @@ export class ProjectTableComponent implements OnInit {
   }
 
   toggleCollapse(id) {
-    console.log('collapse' + id);
     const state = document.getElementById('collapse' + id).style.display;
-    console.log(state);
     if (state === 'none') {
       document.getElementById('collapse' + id).style.display = 'table-row';
       document.getElementById('collapseIcon' + id).className = 'fa fa-arrow-up';
