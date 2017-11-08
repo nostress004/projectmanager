@@ -10,3 +10,14 @@ td li {
     list-style-type: none;
     text-align: left;
 }
+
+.bottomaligned {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    display:table-cell;
+}
+
+table tr td {
+    position: relative;
+  }

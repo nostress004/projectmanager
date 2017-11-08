@@ -1,15 +1,16 @@
 <div class="container">
-  <table class="table table-hover">
+  <table class="table">
+    <!-- <table class="table table-hover"> -->
     <thead>
       <tr>
         <th scope="col">Project name</th>
-        <th scope="col">Risk</th>
-        <th scope="col">Max [days]</th>
-        <th scope="col">Planned [days]</th>
-        <th scope="col">11.06-11.12</th>
-        <th scope="col">11.13-11.19</th>
-        <th scope="col">11.20-11.26</th>
-        <th scope="col">11.27-12.03</th>
+        <th class="text-center" scope="col">Risk</th>
+        <th class="text-center" scope="col">Max [days]</th>
+        <th class="text-center" scope="col">Planned [days]</th>
+        <th class="text-center" scope="col">11.06-11.12</th>
+        <th class="text-center" scope="col">11.13-11.19</th>
+        <th class="text-center" scope="col">11.20-11.26</th>
+        <th class="text-center" scope="col">11.27-12.03</th>
       </tr>
     </thead>
     <tbody>
@@ -17,62 +18,78 @@
         <th scope="row" (click)="toggleCollapse(1)">Project1
           <i id="collapseIcon1" class="fa fa-arrow-down" aria-hidden="true"></i>
         </th>
-        <td>90%</td>
-        <td>T&amp;M</td>
-        <td>16</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td class="text-center">90%</td>
+        <td class="text-center">T&amp;M</td>
+        <td class="text-center">16</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
       </tr>
       <tr id="collapse1" style="display: none">
-        <td colspan="4">Lorem ipsum dolor sit, amet consectetur</td>
-        <td>
-          <div>Angular
-            <span class="badge badge-pill badge-success pull right">3</span>
-          </div>
-          <div>NodeJS
-            <span class="badge badge-pill badge-success">3</span>
-          </div>
-          <div>CSS
-            <span class="badge badge-pill badge-success">2</span>
-          </div>
-          <div>SQL
-            <span class="badge badge-pill badge-success pull right">1</span>
-          </div>
+        <td colspan="4">
+          <div>Project leader: Angela Merkel</div>
+          <div>Start date: 2017.01.01</div>
+          <div>Due date: 2017.12.12.</div>
         </td>
         <td>
-          <div>Angular
-            <span class="badge badge-pill badge-success pull right">9</span>
-          </div>
-          <div>NodeJS
-            <span class="badge badge-pill badge-success">4</span>
-          </div>
-          <div>CSS
-            <span class="badge badge-pill badge-success">3</span>
-          </div>
-          <div>SQL
-            <span class="badge badge-pill badge-success pull right">4</span>
-          </div>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">1</span>
+          <br>
+          <span>SQL </span>
+          <span class="badge badge-pill badge-success pull-right" style="margin-bottom: 35px">2</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
         </td>
         <td>
-          <div>Angular
-            <span class="badge badge-pill badge-success pull right">6</span>
-          </div>
-          <div>NodeJS
-            <span class="badge badge-pill badge-success">3</span>
-          </div>
-          <div>CSS
-            <span class="badge badge-pill badge-success">1</span>
-          </div>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">9</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>SQL </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
         </td>
         <td>
-          <div>Angular
-            <span class="badge badge-pill badge-success pull right">7</span>
-          </div>
-          <div>NodeJS
-            <span class="badge badge-pill badge-success">5</span>
-          </div>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">6</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">1</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">7</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">5</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
         </td>
       </tr>
 
@@ -80,126 +97,158 @@
         <th scope="row" (click)="toggleCollapse(2)">Project2
           <i id="collapseIcon2" class="fa fa-arrow-down" aria-hidden="true"></i>
         </th>
-        <td>100%</td>
-        <td>-</td>
-        <td>30</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td class="text-center">100%</td>
+        <td class="text-center">-</td>
+        <td class="text-center">30</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
       </tr>
       <tr id="collapse2" style="display: none">
-        <td colspan="4">Ez a lenyíló rész ofsfoh</td>
+        <td colspan="4">
+          <div>Project leader: Kis Grófó</div>
+          <div>Start date: 2017.01.01</div>
+          <div>Due date: 2017.12.12.</div>
+        </td>
         <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">3</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">3</span>
-            </div>
-            <div>CSS
-              <span class="badge badge-pill badge-success">2</span>
-            </div>
-            <div>SQL
-              <span class="badge badge-pill badge-success pull right">1</span>
-            </div>
-          </td>
-          <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">9</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">4</span>
-            </div>
-            <div>CSS
-              <span class="badge badge-pill badge-success">3</span>
-            </div>
-            <div>SQL
-              <span class="badge badge-pill badge-success pull right">4</span>
-            </div>
-          </td>
-          <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">6</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">3</span>
-            </div>
-            <div>CSS
-              <span class="badge badge-pill badge-success">1</span>
-            </div>
-          </td>
-          <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">7</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">5</span>
-            </div>
-          </td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">1</span>
+          <br>
+          <span>SQL </span>
+          <span class="badge badge-pill badge-success pull-right" style="margin-bottom: 35px">2</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">9</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>SQL </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">6</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">1</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">7</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">5</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
       </tr>
 
       <tr class="table-danger">
         <th scope="row" (click)="toggleCollapse(3)">Project3
           <i id="collapseIcon3" class="fa fa-arrow-down" aria-hidden="true"></i>
         </th>
-        <td>100%</td>
-        <td>55</td>
-        <td>10</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <td class="text-center">100%</td>
+        <td class="text-center">55</td>
+        <td class="text-center">10</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
+        <td class="text-center">-</td>
       </tr>
       <tr id="collapse3" style="display: none">
-        <td colspan="4">Ez a lenyíló rész ofsfoh asufhaohf</td>
+        <td colspan="4">
+          <div>Project leader: Elvis Prasley</div>
+          <div>Start date: 2017.01.01</div>
+          <div>Due date: 2017.12.12.</div>
+        </td>
         <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">3</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">3</span>
-            </div>
-            <div>CSS
-              <span class="badge badge-pill badge-success">2</span>
-            </div>
-            <div>SQL
-              <span class="badge badge-pill badge-success pull right">1</span>
-            </div>
-          </td>
-          <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">9</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">4</span>
-            </div>
-            <div>CSS
-              <span class="badge badge-pill badge-success">3</span>
-            </div>
-            <div>SQL
-              <span class="badge badge-pill badge-success pull right">4</span>
-            </div>
-          </td>
-          <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">6</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">3</span>
-            </div>
-            <div>CSS
-              <span class="badge badge-pill badge-success">1</span>
-            </div>
-          </td>
-          <td>
-            <div>Angular
-              <span class="badge badge-pill badge-success pull right">7</span>
-            </div>
-            <div>NodeJS
-              <span class="badge badge-pill badge-success">5</span>
-            </div>
-          </td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">1</span>
+          <br>
+          <span>SQL </span>
+          <span class="badge badge-pill badge-success pull-right" style="margin-bottom: 35px">2</span>
+          <br>
+            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+              Edit
+            </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">9</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>SQL </span>
+          <span class="badge badge-pill badge-success pull-right">4</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">6</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">3</span>
+          <br>
+          <span>CSS </span>
+          <span class="badge badge-pill badge-success pull-right">1</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
+        <td>
+          <span>Angular </span>
+          <span class="badge badge-pill badge-success pull-right">7</span>
+          <br>
+          <span>NodeJS </span>
+          <span class="badge badge-pill badge-success pull-right">5</span>
+          <br>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -223,5 +272,25 @@
       </li>
     </ul>
   </nav>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit required skills</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nam, amet impedit quia assumenda alias. Repellat sunt, praesentium obcaecati iste aperiam quisquam cupiditate quae ullam voluptatem, doloribus enim maiores necessitatibus.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes and close</button>
+      </div>
+    </div>
+  </div>
 </div>
