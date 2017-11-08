@@ -1,3 +1,81 @@
-<p>
-  project-table works!
-</p>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Project name</th>
+        <th scope="col">Risk</th>
+        <th scope="col">Max [days]</th>
+        <th scope="col">Planned [days]</th>
+        <th scope="col">11.06-11.12</th>
+        <th scope="col">11.13-11.19</th>
+        <th scope="col">11.20-11.26</th>
+        <th scope="col">11.27-12.03</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row" (click)="toggleCollapse(1)">Project1
+          <i id="collapseIcon1" class="fa fa-arrow-down" aria-hidden="true"></i>
+        </th>
+        <td>90%</td>
+        <td>T&amp;M</td>
+        <td>16</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr id="collapse1" style="display: none">
+        <td colspan="4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla possimus quis corporis doloribus esse perferendis
+          aliquid aspernatur veniam nihil vero!</td>
+      </tr>
+
+      <tr class="table-warning">
+        <th scope="row" (click)="toggleCollapse(2)">Project2
+          <i id="collapseIcon2" class="fa fa-arrow-down" aria-hidden="true"></i>
+        </th>
+        <td>100%</td>
+        <td>-</td>
+        <td>30</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr id="collapse2" style="display: none">
+        <td colspan="100%">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
+      </tr>
+
+      <tr class="table-danger">
+        <th scope="row" (click)="toggleCollapse(3)">Project3
+          <i id="collapseIcon3" class="fa fa-arrow-down" aria-hidden="true"></i>
+        </th>
+        <td>100%</td>
+        <td>55</td>
+        <td>10</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr id="collapse3" style="display: none">
+        <td colspan="100%">Ez a lenyíló rész ofsfoh asufhaohf oaihgoi ahgoiag oiahoghaoi</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+</div>

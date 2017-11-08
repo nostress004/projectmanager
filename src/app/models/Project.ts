@@ -3,7 +3,7 @@ export interface Project {
   name: string;
   company: string;
   email: string;
-  phone: string;
+  phone: number;
   workinghours: number;
   salary: number;
   skills: string;
