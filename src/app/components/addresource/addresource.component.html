@@ -5,15 +5,15 @@
       <div class="row">
         <div class="col col-lg-4">
           <label for="firstname">First Name</label>
-          <input type="text" class="form-control" id="firstname" required>
+          <input [(ngModel)]="newResource.firstname" type="text" class="form-control" id="firstname" name="firstname" required>
         </div>
         <div class="col col-lg-4">
           <label for="lastname">Last Name</label>
-          <input type="text" class="form-control" id="lastname" required>
+          <input [(ngModel)]="newResource.lastname" type="text" class="form-control" id="lastname" name="lastname" required>
         </div>
         <div class="col col-lg-4">
           <label for="phone">Phone</label>
-          <input type="number" class="form-control" id="phone" required>
+          <input [(ngModel)]="newResource.phone" type="number" class="form-control" id="phone" name="phone" required>
         </div>
       </div>
     </div>
@@ -21,11 +21,11 @@
       <div class="row">
         <div class="col col-lg-6">
           <label for="email">E-mail</label>
-          <input type="text" class="form-control" id="email">
+          <input [(ngModel)]="newResource.email" type="text" class="form-control" id="email" name="email" required>
         </div>
         <div class="col col-lg-6">
           <label for="salary">Salary</label>
-          <input type="curr" class="form-control" id="salary">
+          <input [(ngModel)]="newResource.salary" type="curr" class="form-control" id="salary" name="salary" required>
         </div>
       </div>
     </div>
@@ -33,11 +33,11 @@
       <div class="row">
         <div class="col col-xs-6">
           <label for="availableto">Available to</label>
-          <input type="date" class="form-control" id="availableto">
+          <input [(ngModel)]="newResource.availableto" type="date" class="form-control" id="availableto" name="availableto">
         </div>
         <div class="col col-xs-6">
           <label for="availablefrom">Available from</label>
-          <input type="date" class="form-control" id="availablefrom">
+          <input [(ngModel)]="newResource.availablefrom" type="date" class="form-control" id="availablefrom" name="availablefrom">
         </div>
       </div>
     </div>
@@ -45,11 +45,11 @@
       <div class="row">
         <div class="col col-xs-6">
           <label for="company">Company</label>
-          <input type="text" class="form-control" id="company">
+          <input [(ngModel)]="newResource.company" type="text" class="form-control" id="company" name="company">
         </div>
         <div class="col col-xs-6">
           <label for="workinghours">Working hours per week</label>
-          <input type="time" class="form-control" id="workinghours">
+          <input [(ngModel)]="newResource.workinghours" type="time" class="form-control" id="workinghours" name="workinghours">
         </div>
       </div>
     </div>
@@ -73,6 +73,13 @@
         </h4>
         <p class="card-text"> Email: {{resource.email}}</p>
         <p class="card-text"> Phone: {{resource.phone}}</p>
+        <p class="card-text"> ID: {{resource.id}}</p>
+        <div class="card">
+          <b>Skills:</b>
+          <div *ngFor="let skill of resource.skills" class="text-center">
+            {{skill}}
+          </div>
+        </div>
         <button class="btn btn-danger" (click)="onDelete(resource)">Delete Resource</button>
       </li>
     </ul>

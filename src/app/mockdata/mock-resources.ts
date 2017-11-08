@@ -12,7 +12,7 @@ export const RESOURCES: Resource[] = [
     availablefrom: 2200,
     availableto: 2300,
     workinghours: 8,
-    skills: 'JavaScript',
+    skills: ['JavaScript'],
     hide: false
   },
   {
@@ -26,7 +26,7 @@ export const RESOURCES: Resource[] = [
     availablefrom: 20000,
     availableto: 200,
     workinghours: 6,
-    skills: 'Nothing Really',
+    skills: ['Nothing Really'],
     hide: false
   },
   {
@@ -40,7 +40,7 @@ export const RESOURCES: Resource[] = [
     availablefrom: 7200,
     availableto: 6300,
     workinghours: 2,
-    skills: 'C++',
+    skills: ['C++'],
     hide: false
   }
 ];

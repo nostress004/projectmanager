@@ -6,6 +6,6 @@ export interface Project {
   phone: number;
   workinghours: number;
   salary: number;
-  skills: string;
+  skills: string[];
   hide: boolean;
 }
