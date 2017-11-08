@@ -3,6 +3,7 @@ import { Resource } from '../../models/Resource';
 import { ResourceListComponent } from '../resource-list/resource-list.component';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 import { RESOURCES } from '../../mockdata/mock-resources';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addresource',
@@ -30,8 +31,12 @@ export class AddresourceComponent implements OnInit {
   ngOnInit() {}
 
   addResource(form) {
+    var idd: number = Math.floor(
+      Math.random() * (this.resources.length + 1) + 1
+    );
+    console.log(form);
     this.resources.push({
-      id: 3,
+      id: idd,
       firstname: 'BOB',
       lastname: 'SUPERHERO',
       email: 'strangerBOB@gmail.com',
@@ -48,5 +53,14 @@ export class AddresourceComponent implements OnInit {
 
   onChange() {
     console.log(this.optionsModel);
+  }
+
+  onDelete(resource) {
+    for (var i: number = 0; i < this.resources.length; i++) {
+      if (this.resources[i].id == resource.id) {
+        this.resources.splice(i, 1);
+      }
+    }
+    console.log(resource.id);
   }
 }

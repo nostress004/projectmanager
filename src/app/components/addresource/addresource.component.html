@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="text-center">Add New Resource</h1>
-  <form (submit)="addResource(form)">
+  <form (submit)="addResource(resourceForm)">
     <div class="form-group">
       <div class="row">
         <div class="col col-lg-4">
@@ -55,7 +55,15 @@
     </div>
     <button type="submit" class=" text-center btn btn-success">Submit</button>
   </form>
-
+  <div class="container">
+    <div class="row">
+      <div class="offset-lg-5">
+        <label>Select Skills:</label>
+        <ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+      </div>
+    </div>
+  </div>
+  <hr>
   <h2>Resources:</h2>
   <div class="container">
     <ul class="heroes">
@@ -65,7 +73,7 @@
         </h4>
         <p class="card-text"> Email: {{resource.email}}</p>
         <p class="card-text"> Phone: {{resource.phone}}</p>
-        <a href="/addresource" class="btn btn-danger">Delete Resource</a>
+        <button class="btn btn-danger" (click)="onDelete(resource)">Delete Resource</button>
       </li>
     </ul>
   </div>

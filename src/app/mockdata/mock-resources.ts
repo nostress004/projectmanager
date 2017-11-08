@@ -2,7 +2,7 @@ import { Resource } from '../models/Resource';
 
 export const RESOURCES: Resource[] = [
   {
-    id: 1,
+    id: 0,
     firstname: 'Csaba',
     lastname: 'Kigyosi',
     email: 'asdad@gmail.com',
@@ -30,7 +30,7 @@ export const RESOURCES: Resource[] = [
     hide: false
   },
   {
-    id: 1,
+    id: 2,
     firstname: 'Jancsika',
     lastname: 'Kiss',
     email: 'asdad@gmail.com',
