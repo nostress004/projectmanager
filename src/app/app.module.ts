@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 // Other Imports
 
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { ReactiveFormsModule } from '@angular/forms'; // <-- #1 import module
 
 // AngularFire Imports
 import { AngularFireModule } from 'angularfire2';
@@ -69,7 +70,8 @@ export const firebaseConfig = {
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
-    MultiselectDropdownModule
+    MultiselectDropdownModule,
+    ReactiveFormsModule
   ],
   providers: [AngularFireAuth, AngularFireDatabase, QuestionService],
   bootstrap: [AppComponent]

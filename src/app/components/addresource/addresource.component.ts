@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Resource } from '../../models/Resource';
 import { ResourceListComponent } from '../resource-list/resource-list.component';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import { RESOURCES } from '../../mockdata/mock-resources';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addresource',
@@ -9,16 +11,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
   styleUrls: ['./addresource.component.css']
 })
 export class AddresourceComponent implements OnInit {
-  @Output() questionAdded = new EventEmitter<Resource>();
-
-  id: number;
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  workinghours: number;
-  salary: number;
-  skills: string;
+  resources = RESOURCES;
 
   optionsModel: number[];
   myOptions: IMultiSelectOption[];
@@ -37,23 +30,37 @@ export class AddresourceComponent implements OnInit {
 
   ngOnInit() {}
 
-  addResource() {
-    this.questionAdded.emit({
-      id: this.id,
-      name: this.name,
-      company: this.company,
-      email: this.email,
-      phone: this.phone,
-      workinghours: this.workinghours,
-      salary: this.salary,
-      skills: this.skills,
-      hide: true
+  addResource(form) {
+    var idd: number = Math.floor(
+      Math.random() * (this.resources.length + 1) + 1
+    );
+    console.log(form);
+    this.resources.push({
+      id: idd,
+      firstname: 'BOB',
+      lastname: 'SUPERHERO',
+      email: 'strangerBOB@gmail.com',
+      salary: 40,
+      company: 'BRFK',
+      phone: 1235,
+      availablefrom: 9999,
+      availableto: 9999,
+      workinghours: 2,
+      skills: 'BASIC',
+      hide: false
     });
-    console.log('addresource');
-    console.log(this.name);
   }
 
   onChange() {
     console.log(this.optionsModel);
+  }
+
+  onDelete(resource) {
+    for (var i: number = 0; i < this.resources.length; i++) {
+      if (this.resources[i].id == resource.id) {
+        this.resources.splice(i, 1);
+      }
+    }
+    console.log(resource.id);
   }
 }
