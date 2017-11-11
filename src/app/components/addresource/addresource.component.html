@@ -1,5 +1,6 @@
 <div class="container">
   <h1 class="text-center">Add New Resource</h1>
+  <br>
   <form (submit)="addResource(resourceForm)">
     <div class="form-group">
       <div class="row">
@@ -13,7 +14,7 @@
         </div>
         <div class="col col-lg-4">
           <label for="phone">Phone</label>
-          <input [(ngModel)]="newResource.phone" type="number" class="form-control" id="phone" name="phone" required>
+          <input [(ngModel)]="newResource.phone" type="phone" class="form-control" id="phone" name="phone" required>
         </div>
       </div>
     </div>

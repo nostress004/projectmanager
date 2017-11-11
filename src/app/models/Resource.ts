@@ -10,5 +10,4 @@ export interface Resource {
   availableto: number;
   workinghours: number;
   skills: string[];
-  hide: boolean;
 }

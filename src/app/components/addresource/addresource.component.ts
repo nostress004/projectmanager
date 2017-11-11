@@ -24,8 +24,7 @@ export class AddresourceComponent implements OnInit {
     availablefrom: 0,
     availableto: 0,
     workinghours: 0,
-    skills: [],
-    hide: false
+    skills: []
   };
   optionsModel: number[];
   myOptions: IMultiSelectOption[];
@@ -51,8 +50,9 @@ export class AddresourceComponent implements OnInit {
 
     if (!this.resources.length) {
       idd = 0;
+    } else {
+      idd = (this.resources[this.resources.length - 1].id | 0) + 1;
     }
-    idd = (this.resources[this.resources.length - 1].id | 0) + 1;
 
     this.selectedOptions.map(x => selOpt.push(x.name));
     this.resources.push({
@@ -66,17 +66,14 @@ export class AddresourceComponent implements OnInit {
       availablefrom: this.newResource.availablefrom,
       availableto: this.newResource.availableto,
       workinghours: this.newResource.workinghours,
-      skills: selOpt,
-      hide: this.newResource.hide
+      skills: selOpt
     });
   }
 
   onChange() {
-    console.log(this.optionsModel);
-    this.selectedOptions = this.optionsModel.map(rec =>
-      this.myOptions.find(x => x.id === rec)
-    );
-    console.log(this.selectedOptions);
+    this.selectedOptions =
+      this.optionsModel.map(rec => this.myOptions.find(x => x.id === rec)) ||
+      [];
   }
 
   onDelete(resource) {

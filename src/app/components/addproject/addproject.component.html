@@ -1,56 +1,63 @@
 <div class="container">
   <h1 class="text-center">Add New Project</h1>
-  <form>
+  <br>
+  <form #project="ngForm" (ngSubmit)="onSubmit(project)">
     <div class="form-group">
       <div class="row">
-        <div class="col col-xs-6">
+        <div class="col col-lg-3">
           <label for="name">Project name</label>
-          <input type="text" class="form-control" id="name" required>
+          <input [(ngModel)]="newProject.name" type="text" class="form-control" id="name" name="name" required>
         </div>
-        <div class="col col-xs-6">
+        <div class="col col-lg-3">
           <label for="projectleader">Project leader</label>
-          <input type="text" class="form-control" id="projectleader">
+          <input [(ngModel)]="newProject.projectleader" type="text" class="form-control" id="projectleader" name="projectleader" required>
+        </div>
+        <div class="col col-lg-3">
+          <label for="company">Company</label>
+          <input [(ngModel)]="newProject.company" type="text" class="form-control" id="company" name="company" required>
+        </div>
+        <div class="col col-lg-3">
+          <label for="risk ">Probability of start in %</label>
+          <input [(ngModel)]="newProject.risk" type="number " min="0 " max="100 " class="form-control " id="risk ">
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="row">
-        <div class="col col-xs-6">
+        <div class="col col-lg-3">
           <label for="startdate">Start date:</label>
-          <input type="date" class="form-control" id="startdate">
+          <input [(ngModel)]="newProject.startdate" type="date" class="form-control" id="startdate" name="startdate">
         </div>
-        <div class="col col-xs-6">
+        <div class="col col-lg-3">
           <label for="duedate">Due date:</label>
-          <input type="date" class="form-control" id="duedate">
+          <input [(ngModel)]="newProject.duedate" type="date" class="form-control" id="duedate" name="duedate">
         </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="row">
-        <div class="col col-xs-6">
+        <div class="col col-lg-3">
           <label for="plannedhours">Planned hours</label>
-          <input type="time" class="form-control" id="plannedhours">
+          <input [(ngModel)]="newProject.plannedhours" type="time" class="form-control" id="plannedhours" name="plannedhours">
         </div>
-        <div class="col col-xs-6">
+        <div class="col col-lg-3">
           <label for="maxhours">Max hours</label>
-          <input type="time" class="form-control" id="maxhours">
+          <input [(ngModel)]="newProject.maxhours" type="time" class="form-control" id="maxhours" name="maxhours">
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <div class="row">
-        <div class="col col-lg-2 offset-md-5">
-          <label for="risk">Risk in %</label>
-          <input type="number" class="form-control" id="risk">
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="requiredskills">Required Skills</label>
-      <input type="text" class="form-control" id="requiredskills">
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-
+    <button type="submit " class="btn btn-success">Submit</button>
   </form>
+  <hr>
+  <h2>Projects:</h2>
+  <div class="container">
+    <ul class="heroes">
+      <li *ngFor="let project of projects" class="card text-center">
+        <h4 class="card-title">
+          {{project.name}}
+        </h4>
+        <p class="card-text"> Leader: {{project.projectleader}}</p>
+        <p class="card-text"> Company: {{project.company}}</p>
+        <p class="card-text"> ID: {{project.id}}</p>
 
+        <button class="btn btn-danger" (click)="onDelete(project)">Delete Resource</button>
+      </li>
+    </ul>
+  </div>
 </div>

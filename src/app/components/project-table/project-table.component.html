@@ -203,9 +203,9 @@
           <span>SQL </span>
           <span class="badge badge-pill badge-success pull-right" style="margin-bottom: 35px">2</span>
           <br>
-            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Edit
-            </button>
+          <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+            Edit
+          </button>
         </td>
         <td>
           <span>Angular </span>
@@ -253,25 +253,7 @@
     </tbody>
   </table>
   <hr>
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">Previous</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav>
+  <app-pagination [callback]="showMessage"> </app-pagination>
 </div>
 
 <!-- Modal -->
@@ -285,7 +267,8 @@
         </button>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nam, amet impedit quia assumenda alias. Repellat sunt, praesentium obcaecati iste aperiam quisquam cupiditate quae ullam voluptatem, doloribus enim maiores necessitatibus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nam, amet impedit quia assumenda alias. Repellat sunt, praesentium
+        obcaecati iste aperiam quisquam cupiditate quae ullam voluptatem, doloribus enim maiores necessitatibus.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
