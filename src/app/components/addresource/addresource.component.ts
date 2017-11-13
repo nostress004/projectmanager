@@ -13,9 +13,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddresourceComponent implements OnInit {
   resources = RESOURCES;
 
+  newResource: Resource = {
+    id: 0,
+    firstname: '',
+    lastname: '',
+    email: '',
+    salary: 0,
+    company: '',
+    phone: 0,
+    availablefrom: 0,
+    availableto: 0,
+    workinghours: 0,
+    skills: []
+  };
   optionsModel: number[];
   myOptions: IMultiSelectOption[];
 
+  selectedOptions: { id: number; name: string }[];
   constructor() {
     this.myOptions = [
       { id: 1, name: 'JavaScript' },
@@ -31,28 +45,35 @@ export class AddresourceComponent implements OnInit {
   ngOnInit() {}
 
   addResource(form) {
-    var idd: number = Math.floor(
-      Math.random() * (this.resources.length + 1) + 1
-    );
-    console.log(form);
+    var idd: number,
+      selOpt: string[] = [];
+
+    if (!this.resources.length) {
+      idd = 0;
+    } else {
+      idd = (this.resources[this.resources.length - 1].id | 0) + 1;
+    }
+
+    this.selectedOptions.map(x => selOpt.push(x.name));
     this.resources.push({
       id: idd,
-      firstname: 'BOB',
-      lastname: 'SUPERHERO',
-      email: 'strangerBOB@gmail.com',
-      salary: 40,
-      company: 'BRFK',
-      phone: 1235,
-      availablefrom: 9999,
-      availableto: 9999,
-      workinghours: 2,
-      skills: 'BASIC',
-      hide: false
+      firstname: this.newResource.firstname,
+      lastname: this.newResource.lastname,
+      email: this.newResource.email,
+      salary: this.newResource.salary,
+      company: this.newResource.company,
+      phone: this.newResource.phone,
+      availablefrom: this.newResource.availablefrom,
+      availableto: this.newResource.availableto,
+      workinghours: this.newResource.workinghours,
+      skills: selOpt
     });
   }
 
   onChange() {
-    console.log(this.optionsModel);
+    this.selectedOptions =
+      this.optionsModel.map(rec => this.myOptions.find(x => x.id === rec)) ||
+      [];
   }
 
   onDelete(resource) {
@@ -61,6 +82,5 @@ export class AddresourceComponent implements OnInit {
         this.resources.splice(i, 1);
       }
     }
-    console.log(resource.id);
   }
 }

@@ -7,11 +7,12 @@ th {
 } */
 
 td li {
-    list-style-type: none;
-    text-align: left;
+  list-style-type: none;
+  text-align: left;
 }
 
 .bottomaligned {
+<<<<<<< HEAD
     position: absolute;
     bottom: 0;
     margin-bottom: 10px;
@@ -26,3 +27,14 @@ table tr td {
     width: 10px;
     size: 7px;
 } */
+=======
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  display: table-cell;
+}
+
+table tr td {
+  position: relative;
+}
+>>>>>>> 6e468a0f293df548509647f86743775066b5b107

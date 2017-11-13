@@ -9,6 +9,5 @@ export interface Resource {
   availablefrom: number;
   availableto: number;
   workinghours: number;
-  skills: string;
-  hide: boolean;
+  skills: string[];
 }

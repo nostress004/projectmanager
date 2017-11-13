@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginationComponent } from '../pagination/pagination.component';
 
 @Component({
   selector: 'app-project-table',
@@ -6,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-table.component.css']
 })
 export class ProjectTableComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleCollapse(id) {
     const state = document.getElementById('collapse' + id).style.display;
@@ -19,8 +18,12 @@ export class ProjectTableComponent implements OnInit {
       document.getElementById('collapseIcon' + id).className = 'fa fa-arrow-up';
     } else {
       document.getElementById('collapse' + id).style.display = 'none';
-      document.getElementById('collapseIcon' + id).className = 'fa fa-arrow-down';
+      document.getElementById('collapseIcon' + id).className =
+        'fa fa-arrow-down';
     }
   }
 
+  showMessage() {
+    alert('Callback Test');
+  }
 }
