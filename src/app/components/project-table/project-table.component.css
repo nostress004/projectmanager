@@ -15,9 +15,14 @@ td li {
     position: absolute;
     bottom: 0;
     margin-bottom: 10px;
-    display:table-cell;
 }
 
 table tr td {
     position: relative;
-  }
+}
+/* 
+.ize {
+    height: auto;
+    width: 10px;
+    size: 7px;
+} */
