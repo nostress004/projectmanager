@@ -12,22 +12,6 @@ td li {
 }
 
 .bottomaligned {
-<<<<<<< HEAD
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
-}
-
-table tr td {
-    position: relative;
-}
-/* 
-.ize {
-    height: auto;
-    width: 10px;
-    size: 7px;
-} */
-=======
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
@@ -37,4 +21,3 @@ table tr td {
 table tr td {
   position: relative;
 }
->>>>>>> 6e468a0f293df548509647f86743775066b5b107
