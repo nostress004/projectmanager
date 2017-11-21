@@ -33,6 +33,7 @@ import { ResourceTableComponent } from './components/resource-table/resource-tab
 import { ProjectTableComponent } from './components/project-table/project-table.component';
 import { ResourceDashboardComponent } from './components/resource-dashboard/resource-dashboard.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { ProjectTableRowComponent } from './components/project-table-row/project-table-row.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -68,7 +69,8 @@ export const firebaseConfig = {
     ResourceTableComponent,
     ProjectTableComponent,
     ResourceDashboardComponent,
-    PaginationComponent
+    PaginationComponent,
+    ProjectTableRowComponent
   ],
   imports: [
     BrowserModule,

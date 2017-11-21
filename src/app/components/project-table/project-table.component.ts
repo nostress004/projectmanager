@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
+import { PROJECTS } from '../../mockdata/mock-projects';
+import { ProjectTableRowComponent } from '../project-table-row/project-table-row.component';
 
 @Component({
   selector: 'app-project-table',
@@ -7,9 +9,13 @@ import { PaginationComponent } from '../pagination/pagination.component';
   styleUrls: ['./project-table.component.css']
 })
 export class ProjectTableComponent implements OnInit {
+  projects = PROJECTS;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   toggleCollapse(id) {
     const state = document.getElementById('collapse' + id).style.display;

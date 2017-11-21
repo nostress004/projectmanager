@@ -1,0 +1,102 @@
+<tr>
+  <th scope="row" (click)="toggleCollapse(index)">{{ project.name }}
+    <i id="collapseIcon{{index}}" class="fa fa-arrow-down" aria-hidden="true"></i>
+  </th>
+  <td class="text-center">{{ project.risk }}</td>
+  <td class="text-center">{{ project.maxhours }}</td>
+  <td class="text-center">{{ project.plannedhours }}</td>
+  <td class="text-center">-</td>
+  <td class="text-center">-</td>
+  <td class="text-center">-</td>
+  <td class="text-center">-</td>
+</tr>
+<tr id="collapse{{index}}" style="display: none">
+  <td colspan="4">
+    <div>Project leader: {{ project.projectleader }}</div>
+    <div>Start date: {{ project.startdate }}</div>
+    <div>Due date: {{ project.duedate }}</div>
+  </td>
+  <td>
+    <span>Angular </span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-minus" aria-hidden="true"></i>
+    </a>
+    <span class="badge badge-pill badge-primary pull-right">3</span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </a>
+    <br>
+    <span>NodeJS </span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-minus" aria-hidden="true"></i>
+    </a>
+    <span class="badge badge-pill badge-primary pull-right">3</span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </a>
+    <br>
+    <span>CSS </span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-minus" aria-hidden="true"></i>
+    </a>
+    <span class="badge badge-pill badge-primary pull-right">3</span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </a>
+    <br>
+    <span>SQL </span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-minus" aria-hidden="true"></i>
+    </a>
+    <span class="badge badge-pill badge-primary pull-right" style="margin-bottom: 35px">3</span>
+    <a href="#" class="badge badge-secondary pull-right">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </a>
+    <br>
+    <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+      Edit
+    </button>
+  </td>
+  <td>
+    <span>Angular </span>
+    <span class="badge badge-pill badge-success pull-right">9</span>
+    <br>
+    <span>NodeJS </span>
+    <span class="badge badge-pill badge-success pull-right">4</span>
+    <br>
+    <span>CSS </span>
+    <span class="badge badge-pill badge-success pull-right">3</span>
+    <br>
+    <span>SQL </span>
+    <span class="badge badge-pill badge-success pull-right">4</span>
+    <br>
+    <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+      Edit
+    </button>
+  </td>
+  <td>
+    <span>Angular </span>
+    <span class="badge badge-pill badge-success pull-right">6</span>
+    <br>
+    <span>NodeJS </span>
+    <span class="badge badge-pill badge-success pull-right">3</span>
+    <br>
+    <span>CSS </span>
+    <span class="badge badge-pill badge-success pull-right">1</span>
+    <br>
+    <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+      Edit
+    </button>
+  </td>
+  <td>
+    <span>Angular </span>
+    <span class="badge badge-pill badge-success pull-right">7</span>
+    <br>
+    <span>NodeJS </span>
+    <span class="badge badge-pill badge-success pull-right">5</span>
+    <br>
+    <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+      Edit
+    </button>
+  </td>
+</tr>
