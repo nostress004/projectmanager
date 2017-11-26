@@ -9,10 +9,9 @@ export const RESOURCES: Resource[] = [
     salary: 2000,
     company: 'BME',
     phone: 2222,
-    availablefrom: 2200,
-    availableto: 2300,
-    workinghours: 8,
-    skills: ['JavaScript']
+    occupacity: [],
+    skills: ['JavaScript'],
+    calendar: null
   },
   {
     id: 1,
@@ -22,10 +21,9 @@ export const RESOURCES: Resource[] = [
     salary: 100,
     company: 'UFO',
     phone: 233,
-    availablefrom: 20000,
-    availableto: 200,
-    workinghours: 6,
-    skills: ['Nothing Really']
+    occupacity: [],
+    skills: ['Nothing Really'],
+    calendar: null
   },
   {
     id: 2,
@@ -35,9 +33,8 @@ export const RESOURCES: Resource[] = [
     salary: 2000,
     company: 'ELTE',
     phone: 6666,
-    availablefrom: 7200,
-    availableto: 6300,
-    workinghours: 2,
-    skills: ['C++']
+    occupacity: [],
+    skills: ['C++'],
+    calendar: null
   }
 ];

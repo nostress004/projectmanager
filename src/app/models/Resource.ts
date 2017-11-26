@@ -1,3 +1,5 @@
+import { Year } from '../models/Year';
+
 export interface Resource {
   id: number;
   firstname: string;
@@ -6,8 +8,7 @@ export interface Resource {
   salary: number;
   company: string;
   phone: number;
-  availablefrom: number;
-  availableto: number;
-  workinghours: number;
+  occupacity: { project: string; calendar: Year }[];
+  calendar: Year[];
   skills: string[];
 }
