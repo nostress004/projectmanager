@@ -30,6 +30,13 @@ export class ProjectTableComponent implements OnInit {
     }
   }
 
+  setBackgroundColor(plannedhours, maxhours) {
+    if (plannedhours < 222) {
+      return 'table-danger';
+    }
+    return 'table-success';
+  }
+
   showMessage() {
     alert('Callback Test');
   }

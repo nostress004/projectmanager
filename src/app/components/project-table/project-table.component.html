@@ -14,7 +14,7 @@
     </thead>
     <tbody>
       <ng-container *ngFor="let projectEl of projects; let i = index;">
-        <tr class="table-success">
+        <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, projectEl.budget)">
           <th scope="row" (click)="toggleCollapse(i)">{{ projectEl.name }}
             <i id="collapseIcon{{i}}" class="fa fa-arrow-down" aria-hidden="true"></i>
           </th>
