@@ -1,13 +1,17 @@
+import { Year } from '../models/Year';
+import { Resource } from '../models/Resource';
+
 export interface Project {
   id: number;
   name: string;
   projectleader: string;
   company: string;
+  risk: number;
   startdate: number;
   duedate: number;
   plannedhours: number;
-  maxhours: number;
-  risk: number;
   budget: number;
-  skills: string[];
+  calendar: Year;
+  skills: { count: number; skill: string }[];
+  resources: Resource[];
 }

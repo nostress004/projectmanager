@@ -13,10 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <app-project-table-row
-        *ngFor="let projectEl of projects; let i = index;"
-        [project]="projectEl"
-        [index]=i></app-project-table-row>
+      <app-project-table-row *ngFor="let projectEl of projects; let i = index;" [project]="projectEl" [index]=i></app-project-table-row>
     </tbody>
 
     <!-- <tbody>

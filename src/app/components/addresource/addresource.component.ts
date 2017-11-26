@@ -2,7 +2,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Resource } from '../../models/Resource';
 import { ResourceListComponent } from '../resource-list/resource-list.component';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+
 import { RESOURCES } from '../../mockdata/mock-resources';
+import { CALENDAR } from '../../mockdata/mock-calendar';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -11,22 +14,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./addresource.component.css']
 })
 export class AddresourceComponent implements OnInit {
+  //static things
   resources = RESOURCES;
+  calendar = CALENDAR;
+
+  availableto: number;
+  availablefrom: number;
+  workinghours: number;
 
   newResource: Resource = {
     id: 0,
     firstname: '',
     lastname: '',
     email: '',
-    salary: 0,
+    salary: null,
     company: '',
-    phone: 0,
-    availablefrom: 0,
-    availableto: 0,
-    workinghours: 0,
-    skills: []
+    phone: null,
+    skills: [],
+    calendar: this.calendar,
+    occupacity: null
   };
+
   optionsModel: number[];
+
   myOptions: IMultiSelectOption[];
 
   selectedOptions: { id: number; name: string }[];
@@ -44,30 +54,51 @@ export class AddresourceComponent implements OnInit {
 
   ngOnInit() {}
 
-  addResource(form) {
-    var idd: number,
-      selOpt: string[] = [];
+  addResource(resourceForm) {
+    if (
+      this.newResource.firstname &&
+      this.newResource.lastname &&
+      this.newResource.phone &&
+      this.newResource.email
+    ) {
+      var idd: number,
+        selOpt: string[] = [];
 
-    if (!this.resources.length) {
-      idd = 0;
+      if (!this.resources.length) {
+        idd = 0;
+      } else {
+        idd = (this.resources[this.resources.length - 1].id | 0) + 1;
+      }
+
+      this.selectedOptions.map(x => selOpt.push(x.name));
+      this.resources.push({
+        id: idd,
+        firstname: this.newResource.firstname,
+        lastname: this.newResource.lastname,
+        email: this.newResource.email,
+        salary: this.newResource.salary,
+        company: this.newResource.company,
+        phone: this.newResource.phone,
+        occupacity: this.newResource.occupacity,
+        calendar: this.newResource.calendar,
+        skills: selOpt
+      });
+
+      this.newResource = {
+        id: 0,
+        firstname: '',
+        lastname: '',
+        email: '',
+        salary: null,
+        company: '',
+        phone: null,
+        skills: [],
+        calendar: this.calendar,
+        occupacity: null
+      };
     } else {
-      idd = (this.resources[this.resources.length - 1].id | 0) + 1;
+      window.alert('First 4 inputs are required');
     }
-
-    this.selectedOptions.map(x => selOpt.push(x.name));
-    this.resources.push({
-      id: idd,
-      firstname: this.newResource.firstname,
-      lastname: this.newResource.lastname,
-      email: this.newResource.email,
-      salary: this.newResource.salary,
-      company: this.newResource.company,
-      phone: this.newResource.phone,
-      availablefrom: this.newResource.availablefrom,
-      availableto: this.newResource.availableto,
-      workinghours: this.newResource.workinghours,
-      skills: selOpt
-    });
   }
 
   onChange() {
@@ -82,5 +113,23 @@ export class AddresourceComponent implements OnInit {
         this.resources.splice(i, 1);
       }
     }
+  }
+
+  onAddDefault() {
+    for (var i: number = this.availablefrom - 1; i < this.availableto; i++) {
+      this.newResource.calendar[0].weeks[i].max = this.workinghours;
+    }
+  }
+
+  onEdit(resource) {
+    this.newResource.id = resource.id;
+    this.newResource.firstname = resource.firstname;
+    this.newResource.lastname = resource.lastname;
+    this.newResource.email = resource.email;
+    this.newResource.salary = resource.salary;
+    this.newResource.company = resource.company;
+    this.newResource.phone = resource.phone;
+    this.newResource.occupacity = resource.occupacity;
+    this.newResource.calendar = resource.calendar;
   }
 }

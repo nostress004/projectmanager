@@ -3,6 +3,7 @@
   <br>
   <form #project="ngForm" (ngSubmit)="onSubmit(project)">
     <div class="form-group">
+      <h2>Main details</h2>
       <div class="row">
         <div class="col col-lg-3">
           <label for="name">Project name</label>
@@ -23,22 +24,73 @@
       </div>
     </div>
     <div class="form-group">
-      <div class="row">
-        <div class="col col-lg-3">
-          <label for="startdate">Start date:</label>
-          <input [(ngModel)]="newProject.startdate" type="date" class="form-control" id="startdate" name="startdate">
+      <div class="container" style="margin-bottom:50px; margin-top:50px">
+        <h2>Schedule</h2>
+        <div class="row">
+          <div class="col col-lg-3">
+            <label for="startdate">Start date (week):</label>
+            <input [(ngModel)]="newProject.startdate" type="number" placeholder="First week" step="1" min="1" max="52" class="form-control"
+              id="startdate" name="startdate">
+            <!-- <select *ngFor="let number of weeknumbers" id="availablefrom" name="availablefrom">
+                <option value="number">{{number}}</option>
+              </select> -->
+            <div class="alert alert-danger" *ngIf="newProject.startdate >53">
+              Value should be between 1 and 52/53!
+            </div>
+          </div>
+          <div class="col col-lg-3">
+            <label for="duedate">Due date (week):</label>
+            <input [(ngModel)]="newProject.duedate" type="number" placeholder="Last Week" step="1" min="1" max="52" class="form-control"
+              id="duedate" name="duedate">
+            <div class="alert alert-danger" *ngIf="newProject.duedate >53">
+              Value should be between 1 and 52/53!
+            </div>
+          </div>
+          <div class="col col-lg-3">
+            <label for="plannedhours">Planned hours:</label>
+            <input [(ngModel)]="newProject.plannedhours" type="number" placeholder="Planned hours" step="1" min="0" max="1000" class="form-control"
+              id="plannedhours" name="plannedhours" value="">
+            <div class="alert alert-danger" *ngIf="newProject.plannedhours >1000">
+              Value is too high!
+            </div>
+          </div>
+          <div class="col col-lg-3">
+
+          </div>
         </div>
-        <div class="col col-lg-3">
-          <label for="duedate">Due date:</label>
-          <input [(ngModel)]="newProject.duedate" type="date" class="form-control" id="duedate" name="duedate">
-        </div>
-        <div class="col col-lg-3">
-          <label for="plannedhours">Planned hours</label>
-          <input [(ngModel)]="newProject.plannedhours" type="time" class="form-control" id="plannedhours" name="plannedhours">
-        </div>
-        <div class="col col-lg-3">
-          <label for="maxhours">Max hours</label>
-          <input [(ngModel)]="newProject.maxhours" type="time" class="form-control" id="maxhours" name="maxhours">
+        <div class="row">
+          <div class="col col-lg-2">
+          </div>
+          <div class="col col-lg-8">
+            <ul class="heroes" style="margin-top:50px">
+              <li *ngFor="let year of newResource.calendar" class="card text-center">
+                <h4 class="card-title">
+                  {{year.id}}
+                  <hr>
+                </h4>
+                <div *ngFor="let week of year.weeks" class="text-center">
+                  <div *ngIf="week.max !==0" class="row">
+                    <div class="col col-lg-4">
+                      <h4 class="card-title">
+                        Week: {{week.id}}
+                      </h4>
+                    </div>
+                    <div class="col col-lg-4">
+                      Current: {{week.current}}
+                    </div>
+                    <div class="col col-lg-4">
+                      Max: {{week.max}}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col col-lg-2">
+
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -48,14 +100,20 @@
   <h2>Projects:</h2>
   <div class="container">
     <ul class="heroes">
-      <li *ngFor="let project of projects" class="card text-center">
+      <li *ngFor="let year of calendar" class="text-center">
         <h4 class="card-title">
-          {{project.name}}
+          {{year.id}}
         </h4>
-        <p class="card-text"> Leader: {{project.projectleader}}</p>
-        <p class="card-text"> Company: {{project.company}}</p>
-        <p class="card-text"> ID: {{project.id}}</p>
-
+        <ul class="heroes">
+          <li *ngFor="let week of year.weeks" class="text-center">
+            <h4 class="card-title">
+              {{week.id}}
+            </h4>
+            <p class="card-text"> Current: {{week.current}}</p>
+            <p class="card-text"> Max: {{week.max}}</p>
+            <hr>
+          </li>
+        </ul>
         <button class="btn btn-danger" (click)="onDelete(project)">Delete Resource</button>
       </li>
     </ul>
