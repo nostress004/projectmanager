@@ -19,6 +19,8 @@ export class AddProjectComponent implements OnInit {
   projects = PROJECTS;
   calendar = CALENDAR;
   resources = RESOURCES;
+  resourceCount: number = 0;
+  skills = [''];
 
   newProject: Project = {
     id: 0,
@@ -30,7 +32,7 @@ export class AddProjectComponent implements OnInit {
     duedate: null,
     plannedhours: null,
     budget: 0,
-    calendar: this.calendar[0],
+    calendar: this.calendar,
     skills: [],
     resources: []
   };
@@ -41,5 +43,40 @@ export class AddProjectComponent implements OnInit {
 
   onSubmit(project: NgForm) {
     console.log(project); // { first: '', last: '' }
+  }
+
+  onMinus() {
+    if (this.resourceCount > 0) this.resourceCount--;
+  }
+
+  onPlus() {
+    if (50 > this.resourceCount) this.resourceCount++;
+  }
+
+  onRequirementAdd() {
+    var DropdownList = document.getElementById(
+        'skillselect'
+      ) as HTMLSelectElement,
+      SelectedIndex = DropdownList.selectedIndex,
+      str: string = DropdownList.options[SelectedIndex].value,
+      indexOfElement = this.newProject.skills.findIndex(i => i.skill === str);
+
+    if (indexOfElement > -1) {
+      this.newProject.skills.splice(indexOfElement, 1);
+    }
+    this.newProject.skills.push({
+      count: this.resourceCount,
+      skill: str
+    });
+  }
+
+  onAddDefault() {
+    for (
+      var i: number = this.newProject.startdate - 1;
+      i < this.newProject.duedate;
+      i++
+    ) {
+      this.newProject.calendar[0].weeks[i].max = this.newProject.plannedhours;
+    }
   }
 }

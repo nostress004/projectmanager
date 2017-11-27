@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
     duedate: 20130212,
     plannedhours: 0,
     budget: 2506600,
-    calendar: null,
+    calendar: [],
     skills: [],
     resources: []
   },
@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     duedate: 20130212,
     plannedhours: 0,
     budget: 2506600,
-    calendar: null,
+    calendar: [],
     skills: [],
     resources: []
   },
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     duedate: 20130212,
     plannedhours: 0,
     budget: 2506600,
-    calendar: null,
+    calendar: [],
     skills: [],
     resources: []
   }
