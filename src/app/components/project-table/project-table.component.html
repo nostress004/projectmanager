@@ -33,86 +33,67 @@
             <div>Due date: {{ projectEl.duedate }}</div>
           </td>
           <td>
-            <span>Angular </span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-minus" aria-hidden="true"></i>
-            </a>
-            <span class="badge badge-pill badge-primary pull-right">3</span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </a>
-            <br>
-            <span>NodeJS </span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-minus" aria-hidden="true"></i>
-            </a>
-            <span class="badge badge-pill badge-primary pull-right">3</span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </a>
-            <br>
-            <span>CSS </span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-minus" aria-hidden="true"></i>
-            </a>
-            <span class="badge badge-pill badge-primary pull-right">3</span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </a>
-            <br>
-            <span>SQL </span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-minus" aria-hidden="true"></i>
-            </a>
-            <span class="badge badge-pill badge-primary pull-right" style="margin-bottom: 35px">3</span>
-            <a href="#" class="badge badge-secondary pull-right">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </a>
-            <br>
-            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Edit
+            <ng-container *ngFor="let skill of skills; let i = index;">
+              <span>{{ skill.name }} </span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </a>
+              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+              <br>
+            </ng-container>
+            <button type="button" class="btn btn-primary btn-sm pull-rigth" data-toggle="modal" data-target="#exampleModalLong">
+              Add resource
             </button>
           </td>
           <td>
-            <span>Angular </span>
-            <span class="badge badge-pill badge-success pull-right">9</span>
-            <br>
-            <span>NodeJS </span>
-            <span class="badge badge-pill badge-success pull-right">4</span>
-            <br>
-            <span>CSS </span>
-            <span class="badge badge-pill badge-success pull-right">3</span>
-            <br>
-            <span>SQL </span>
-            <span class="badge badge-pill badge-success pull-right">4</span>
-            <br>
+            <ng-container *ngFor="let skill of skills; let i = index;">
+              <span>{{ skill.name }} </span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </a>
+              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+              <br>
+            </ng-container>
             <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Edit
+              Add resource
             </button>
           </td>
           <td>
-            <span>Angular </span>
-            <span class="badge badge-pill badge-success pull-right">6</span>
-            <br>
-            <span>NodeJS </span>
-            <span class="badge badge-pill badge-success pull-right">3</span>
-            <br>
-            <span>CSS </span>
-            <span class="badge badge-pill badge-success pull-right">1</span>
-            <br>
+            <ng-container *ngFor="let skill of skills; let i = index;">
+              <span>{{ skill.name }} </span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </a>
+              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+              <br>
+            </ng-container>
             <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Edit
+              Add resource
             </button>
           </td>
           <td>
-            <span>Angular </span>
-            <span class="badge badge-pill badge-success pull-right">7</span>
-            <br>
-            <span>NodeJS </span>
-            <span class="badge badge-pill badge-success pull-right">5</span>
-            <br>
+            <ng-container *ngFor="let skill of skills; let i = index;">
+              <span>{{ skill.name }} </span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </a>
+              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+              <br>
+            </ng-container>
             <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Edit
+              Add resource
             </button>
           </td>
         </tr>

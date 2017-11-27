@@ -10,6 +10,20 @@ import { ProjectTableRowComponent } from '../project-table-row/project-table-row
 })
 export class ProjectTableComponent implements OnInit {
   projects = PROJECTS;
+  skills = [
+    {
+      name: 'C',
+      number: 2
+    },
+    {
+      name: 'B',
+      number: 3
+    },
+    {
+      name: 'D',
+      number: 4
+    }
+  ];
 
   constructor() {}
 
@@ -18,7 +32,6 @@ export class ProjectTableComponent implements OnInit {
   }
 
   toggleCollapse(id) {
-    console.log(id);
     const state = document.getElementById('collapse' + id).style.display;
     if (state === 'none') {
       document.getElementById('collapse' + id).style.display = 'table-row';
@@ -31,8 +44,11 @@ export class ProjectTableComponent implements OnInit {
   }
 
   setBackgroundColor(plannedhours, maxhours) {
+    // TODO: only for testing, real algorythm needs to be implemented 
     if (plannedhours < 222) {
       return 'table-danger';
+    } else if (plannedhours < 400) {
+      return 'table-warning';
     }
     return 'table-success';
   }
