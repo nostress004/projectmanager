@@ -19,8 +19,8 @@
             <i id="collapseIcon{{i}}" class="fa fa-arrow-down" aria-hidden="true"></i>
           </th>
           <td class="text-center">{{ projectEl.risk }}</td>
-          <td class="text-center">{{ projectEl.budget }}</td>
           <td class="text-center">{{ projectEl.plannedhours }}</td>
+          <td class="text-center">needs calc</td>
           <td class="text-center">-</td>
           <td class="text-center">-</td>
           <td class="text-center">-</td>
@@ -34,8 +34,9 @@
           </td>
           <td>
             <ng-container *ngFor="let skill of skills; let i = index;">
+            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex]; let i = index;"> -->
               <span>{{ skill.name }} </span>
-              <a href="#" class="badge badge-secondary pull-right">
+              <a href="#" ng-click="console.log(2)" class="badge badge-secondary pull-right">
                 <i class="fa fa-minus" aria-hidden="true"></i>
               </a>
               <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
@@ -44,28 +45,13 @@
               </a>
               <br>
             </ng-container>
-            <button type="button" class="btn btn-primary btn-sm pull-rigth" data-toggle="modal" data-target="#exampleModalLong">
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong">
               Add resource
             </button>
           </td>
           <td>
             <ng-container *ngFor="let skill of skills; let i = index;">
-              <span>{{ skill.name }} </span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-minus" aria-hidden="true"></i>
-              </a>
-              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </a>
-              <br>
-            </ng-container>
-            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Add resource
-            </button>
-          </td>
-          <td>
-            <ng-container *ngFor="let skill of skills; let i = index;">
+            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex + 1]; let i = index;"> -->
               <span>{{ skill.name }} </span>
               <a href="#" class="badge badge-secondary pull-right">
                 <i class="fa fa-minus" aria-hidden="true"></i>
@@ -82,6 +68,24 @@
           </td>
           <td>
             <ng-container *ngFor="let skill of skills; let i = index;">
+            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex + 2]; let i = index;"> -->
+              <span>{{ skill.name }} </span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </a>
+              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
+              <a href="#" class="badge badge-secondary pull-right">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+              <br>
+            </ng-container>
+            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+              Add resource
+            </button>
+          </td>
+          <td>
+            <ng-container *ngFor="let skill of skills; let i = index;">
+            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex + 3]; let i = index;"> -->
               <span>{{ skill.name }} </span>
               <a href="#" class="badge badge-secondary pull-right">
                 <i class="fa fa-minus" aria-hidden="true"></i>
