@@ -3,6 +3,7 @@ import { Resource } from '../../models/Resource';
 import { ResourceListComponent } from '../resource-list/resource-list.component';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 
+import { Week } from '../../models/Week';
 import { RESOURCES } from '../../mockdata/mock-resources';
 import { CALENDAR } from '../../mockdata/mock-calendar';
 
@@ -21,19 +22,9 @@ export class AddresourceComponent implements OnInit {
   availableto: number;
   availablefrom: number;
   workinghours: number;
+  editing: boolean = false;
 
-  newResource: Resource = {
-    id: 0,
-    firstname: '',
-    lastname: '',
-    email: '',
-    salary: null,
-    company: '',
-    phone: null,
-    skills: [],
-    calendar: this.calendar,
-    occupacity: null
-  };
+  newResource: Resource;
 
   optionsModel: number[];
 
@@ -52,7 +43,35 @@ export class AddresourceComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initResource();
+  }
+
+  initResource() {
+    this.availableto = null;
+    this.availablefrom = null;
+    this.workinghours = null;
+
+    var weeks: Week[] = [];
+
+    for (var i: number = 1; i < 53; i++) {
+      var tmp: Week = { id: i, current: 0, max: 0 };
+      weeks.push(tmp);
+    }
+    this.newResource = {
+      id: 0,
+      firstname: '',
+      lastname: '',
+      email: '',
+      salary: null,
+      company: '',
+      phone: null,
+      skills: [],
+      calendar: [{ id: 2017, weeks: null }],
+      occupacity: null
+    };
+    this.newResource.calendar[0].weeks = weeks;
+  }
 
   addResource(resourceForm) {
     if (
@@ -84,18 +103,7 @@ export class AddresourceComponent implements OnInit {
         skills: selOpt
       });
 
-      this.newResource = {
-        id: 0,
-        firstname: '',
-        lastname: '',
-        email: '',
-        salary: null,
-        company: '',
-        phone: null,
-        skills: [],
-        calendar: this.calendar,
-        occupacity: null
-      };
+      this.initResource();
     } else {
       window.alert('First 4 inputs are required');
     }
@@ -122,14 +130,32 @@ export class AddresourceComponent implements OnInit {
   }
 
   onEdit(resource) {
-    this.newResource.id = resource.id;
-    this.newResource.firstname = resource.firstname;
-    this.newResource.lastname = resource.lastname;
-    this.newResource.email = resource.email;
-    this.newResource.salary = resource.salary;
-    this.newResource.company = resource.company;
-    this.newResource.phone = resource.phone;
-    this.newResource.occupacity = resource.occupacity;
-    this.newResource.calendar = resource.calendar;
+    if (this.editing) {
+      resource.id = this.newResource.id;
+      resource.firstname = this.newResource.firstname;
+      resource.lastname = this.newResource.lastname;
+      resource.email = this.newResource.email;
+      resource.salary = this.newResource.salary;
+      resource.company = this.newResource.company;
+      resource.phone = this.newResource.phone;
+      resource.skills = this.newResource.skills;
+      resource.occupacity = this.newResource.occupacity;
+      resource.calendar = this.newResource.calendar;
+
+      this.editing = false;
+    } else {
+      this.newResource.id = resource.id;
+      this.newResource.firstname = resource.firstname;
+      this.newResource.lastname = resource.lastname;
+      this.newResource.email = resource.email;
+      this.newResource.salary = resource.salary;
+      this.newResource.company = resource.company;
+      this.newResource.phone = resource.phone;
+      this.newResource.skills = resource.skills;
+      this.newResource.occupacity = resource.occupacity;
+      this.newResource.calendar = resource.calendar;
+
+      this.editing = true;
+    }
   }
 }

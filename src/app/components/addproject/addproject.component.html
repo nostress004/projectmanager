@@ -182,7 +182,7 @@
 
       </div>
     </div>
-    <button type="submit " class="btn btn-success">Submit</button>
+    <button type="submit " class="btn btn-success" (click)="onAddProject()">Submit</button>
   </form>
   <hr>
   <h2>Projects:</h2>
@@ -223,7 +223,7 @@
           <div class="col col-lg-3">
           </div>
           <div class="col col-lg-3">
-            <button class="btn btn-primary" (click)="onEdit(resource)">
+            <button class="btn btn-primary" (click)="onEdit(project)">
               <b>Edit</b>
             </button>
           </div>
