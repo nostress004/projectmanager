@@ -155,4 +155,11 @@ export class AddProjectComponent implements OnInit {
       this.editing = true;
     }
   }
+  onDelete(project) {
+    for (var i: number = 0; i < this.projects.length; i++) {
+      if (this.projects[i].id == project.id) {
+        this.projects.splice(i, 1);
+      }
+    }
+  }
 }
