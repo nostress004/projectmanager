@@ -6,10 +6,10 @@
         <th class="text-center" scope="col">Risk</th>
         <th class="text-center" scope="col">Max [days]</th>
         <th class="text-center" scope="col">Planned [days]</th>
-        <th class="text-center" scope="col">11.06-11.12</th>
-        <th class="text-center" scope="col">11.13-11.19</th>
-        <th class="text-center" scope="col">11.20-11.26</th>
-        <th class="text-center" scope="col">11.27-12.03</th>
+        <th class="text-center" scope="col">{{week}}. week</th>
+        <th class="text-center" scope="col">{{week + 1}}. week</th>
+        <th class="text-center" scope="col">{{week + 2}}. week</th>
+        <th class="text-center" scope="col">{{week + 3}}. week</th>
       </tr>
     </thead>
     <tbody>
@@ -105,5 +105,7 @@
     </tbody>
   </table>
   <hr>
-  <app-pagination [callback]="showMessage"> </app-pagination>
+  <button class="btn btn-success" (click)="decWeek();">Previous</button>
+  <button class="btn btn-success pull-right" (click)="incWeek();">Next</button>
+  <!-- <app-pagination [callback]="showMessage"> </app-pagination> -->
 </div>

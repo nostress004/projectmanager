@@ -8,6 +8,7 @@ import { ProjectTableRowComponent } from '../project-table-row/project-table-row
   templateUrl: './project-table.component.html',
   styleUrls: ['./project-table.component.css']
 })
+
 export class ProjectTableComponent implements OnInit {
   projects = PROJECTS;
   skills = [
@@ -24,6 +25,9 @@ export class ProjectTableComponent implements OnInit {
       number: 4
     }
   ];
+
+  week = 1;
+
 
   constructor() {}
 
@@ -55,5 +59,17 @@ export class ProjectTableComponent implements OnInit {
 
   showMessage() {
     alert('Callback Test');
+  }
+
+  incWeek() {
+    if (this.week < 52) {
+      this.week += 1;
+    }
+  }
+
+  decWeek() {
+    if (this.week > 1) {
+      this.week -= 1;
+    }
   }
 }
