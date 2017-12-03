@@ -36,11 +36,11 @@
             <td>
               <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week - 1].skills; let i = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" ng-click="console.log(2)" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
@@ -52,11 +52,11 @@
             <td>
               <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week].skills; let i = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
@@ -68,11 +68,11 @@
             <td>
               <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 1].skills; let i = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
@@ -84,11 +84,11 @@
             <td>
               <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 2].skills; let i = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" class="badge badge-secondary pull-right">
+                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>

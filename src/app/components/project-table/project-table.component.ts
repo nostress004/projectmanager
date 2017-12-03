@@ -86,4 +86,8 @@ export class ProjectTableComponent implements OnInit {
     }
     this.week = inputValue;
   }
+
+  valami() {
+    console.log('lalala');
+  }
 }
