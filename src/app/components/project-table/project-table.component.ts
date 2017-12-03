@@ -51,10 +51,8 @@ export class ProjectTableComponent implements OnInit {
 
   setBackgroundColor(plannedhours, maxhours) {
     // TODO: only for testing, real algorythm needs to be implemented
-    if (maxhours < 1) {
+    if (maxhours > plannedhours) {
       return 'table-danger';
-    } else if (maxhours < 2) {
-      return 'table-warning';
     }
     return 'table-success';
   }
@@ -87,7 +85,24 @@ export class ProjectTableComponent implements OnInit {
     this.week = inputValue;
   }
 
-  valami() {
-    console.log('lalala');
+  sumSkillCounts (project, number) {
+    const dif = number - 2;
+    let sum = 0;
+    for (let skill of project.calendar[0].weeks[this.week  + dif].skills) {
+      sum += skill.count;
+    }
+    return sum;
+  }
+
+  sumWeekCounts (project) {
+    let sum = 0;
+    let sum2 = 0;
+    for (let i = 0; i < project.calendar[0].weeks.length; i++) {
+      for (let skill of project.calendar[0].weeks[i].skills) {
+        sum += skill.count;
+      }
+      sum2 = i;
+    }
+    return sum;
   }
 }

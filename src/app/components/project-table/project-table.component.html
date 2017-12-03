@@ -15,17 +15,17 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let projectEl of projects; let i = index;">
-          <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, i)">
+          <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, sumWeekCounts(projectEl))">
             <th scope="row" (click)="toggleCollapse(i)">{{ projectEl.name }}
               <i id="collapseIcon{{i}}" class="fa fa-arrow-down" aria-hidden="true"></i>
             </th>
             <td class="text-center">{{ projectEl.risk }}</td>
             <td class="text-center">{{ projectEl.plannedhours }}</td>
-            <td class="text-center">needs calc</td>
-            <td class="text-center">-</td>
-            <td class="text-center">-</td>
-            <td class="text-center">-</td>
-            <td class="text-center">-</td>
+            <td class="text-center">{{ sumWeekCounts(projectEl) }}</td>
+            <td class="text-center">{{ sumSkillCounts(projectEl, 1) }}</td>
+            <td class="text-center">{{ sumSkillCounts(projectEl, 2) }}</td>
+            <td class="text-center">{{ sumSkillCounts(projectEl, 3) }}</td>
+            <td class="text-center">{{ sumSkillCounts(projectEl, 4) }}</td>
           </tr>
           <tr class="table" id="collapse{{i}}" style="display: none">
             <td colspan="4">
