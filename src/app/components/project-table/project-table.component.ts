@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { PROJECTS } from '../../mockdata/mock-projects';
 import { PROJECTS2 } from '../../mockdata/mock-projects2';
-import { ProjectTableRowComponent } from '../project-table-row/project-table-row.component';
+import { Skill } from '../../models/Skill';
 
 @Component({
   selector: 'app-project-table',
@@ -50,9 +50,10 @@ export class ProjectTableComponent implements OnInit {
   }
 
   setBackgroundColor(plannedhours, maxhours) {
-    // TODO: only for testing, real algorythm needs to be implemented
     if (maxhours > plannedhours) {
       return 'table-danger';
+    } else if (maxhours === plannedhours) {
+      return 'table-warning';
     }
     return 'table-success';
   }
@@ -73,6 +74,19 @@ export class ProjectTableComponent implements OnInit {
     }
   }
 
+  incSkill(skill) {
+    skill.count += 1;
+  }
+
+  decSkill(skill, skills) {
+    if (skill.count > 1) {
+      skill.count -= 1;
+    } else {
+      const index = skills.indexOf(skill);
+      skills.splice(index, 1);
+    }
+  }
+
   goToWeek() {
     const inputValue = parseInt((<HTMLInputElement>document.getElementById('weekInput')).value, 0);
     if (inputValue >= 49) {
@@ -83,6 +97,7 @@ export class ProjectTableComponent implements OnInit {
       return;
     }
     this.week = inputValue;
+    (<HTMLInputElement>document.getElementById('weekInput')).value = '';
   }
 
   sumSkillCounts (project, number) {
@@ -96,13 +111,17 @@ export class ProjectTableComponent implements OnInit {
 
   sumWeekCounts (project) {
     let sum = 0;
-    let sum2 = 0;
     for (let i = 0; i < project.calendar[0].weeks.length; i++) {
       for (let skill of project.calendar[0].weeks[i].skills) {
         sum += skill.count;
       }
-      sum2 = i;
     }
     return sum;
+  }
+
+  addResource(skills, id1, id2) {
+    const temp = (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value;
+    skills.push({count: 1, name: temp});
+    (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value = '';
   }
 }

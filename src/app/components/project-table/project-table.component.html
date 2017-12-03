@@ -34,66 +34,74 @@
               <div>Due date: {{ projectEl.duedate }}</div>
             </td>
             <td>
-              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week - 1].skills; let i = index;">
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week - 1].skills; let j = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="decSkill(skill, projects[i].calendar[0].weeks[this.week - 1].skills);" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="incSkill(skill);" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
               </ng-container>
-              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+              <input class="inputSm" id="input{{i}}0" type="text">
+              <br>
+              <button (click)="addResource(projects[i].calendar[0].weeks[this.week - 1].skills, i, 0);" type="button" class="btn btn-primary btn-sm">
                 Add resource
               </button>
             </td>
             <td>
-              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week].skills; let i = index;">
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week].skills; let j = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="decSkill(skill, projects[i].calendar[0].weeks[this.week].skills);" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="incSkill(skill);" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
               </ng-container>
-              <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+              <input class="inputSm" id="input{{i}}1" type="text">
+              <br>
+              <button (click)="addResource(projects[i].calendar[0].weeks[this.week].skills, i, 1);" type="button" class="btn btn-primary btn-sm">
                 Add resource
               </button>
             </td>
             <td>
-              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 1].skills; let i = index;">
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 1].skills; let j = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="decSkill(skill, projects[i].calendar[0].weeks[this.week + 1].skills);" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="incSkill(skill);" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
               </ng-container>
-              <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+              <input class="inputSm" id="input{{i}}2" type="text">
+              <br>
+              <button (click)="addResource(projects[i].calendar[0].weeks[this.week + 1].skills, i, 2);" type="button" class="btn btn-primary btn-sm">
                 Add resource
               </button>
             </td>
             <td>
-              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 2].skills; let i = index;">
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 2].skills; let j = index;">
                 <span>{{ skill.name }} </span>
-                <a href="#" (click)="skill.count = skill.count - 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="decSkill(skill, projects[i].calendar[0].weeks[this.week + 2].skills);" class="badge badge-secondary pull-right">
                   <i class="fa fa-minus" aria-hidden="true"></i>
                 </a>
                 <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
-                <a href="#" (click)="skill.count = skill.count + 1;" class="badge badge-secondary pull-right">
+                <a href="#" (click)="incSkill(skill);" class="badge badge-secondary pull-right">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                 </a>
                 <br>
               </ng-container>
-              <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+              <input class="inputSm" id="input{{i}}3" type="text">
+              <br>
+              <button (click)="addResource(projects[i].calendar[0].weeks[this.week + 2].skills, i, 3);" type="button" class="btn btn-primary btn-sm">
                 Add resource
               </button>
             </td>
