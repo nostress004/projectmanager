@@ -37,9 +37,9 @@ export class ResourceTableComponent implements OnInit {
 
   setBackgroundColor(plannedhours, maxhours) {
     // TODO: only for testing, real algorythm needs to be implemented
-    if (plannedhours < 222) {
+    if (plannedhours < 1) {
       return 'table-danger';
-    } else if (plannedhours < 400) {
+    } else if (plannedhours < 2) {
       return 'table-warning';
     }
     return 'table-success';
@@ -55,5 +55,17 @@ export class ResourceTableComponent implements OnInit {
     if (this.week > 1) {
       this.week -= 1;
     }
+  }
+
+  goToWeek() {
+    const inputValue = parseInt((<HTMLInputElement>document.getElementById('weekInput')).value, 0);
+    if (inputValue >= 49) {
+      this.week = 49;
+      return;
+    } else if (inputValue <= 1) {
+      this.week = 1;
+      return;
+    }
+    this.week = inputValue;
   }
 }

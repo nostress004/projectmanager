@@ -21,3 +21,7 @@ td li {
 table tr td {
   position: relative;
 }
+
+.page-input {
+  width: 40px !important;
+}

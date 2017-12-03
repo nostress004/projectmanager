@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { PROJECTS } from '../../mockdata/mock-projects';
+import { PROJECTS2 } from '../../mockdata/mock-projects2';
 import { ProjectTableRowComponent } from '../project-table-row/project-table-row.component';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProjectTableRowComponent } from '../project-table-row/project-table-row
 })
 
 export class ProjectTableComponent implements OnInit {
-  projects = PROJECTS;
+  projects = PROJECTS2;
   skills = [
     {
       name: 'C',
@@ -45,13 +46,14 @@ export class ProjectTableComponent implements OnInit {
       document.getElementById('collapseIcon' + id).className =
         'fa fa-arrow-down';
     }
+    const i = this.projects[0].calendar[0].weeks[this.week].skills;
   }
 
   setBackgroundColor(plannedhours, maxhours) {
-    // TODO: only for testing, real algorythm needs to be implemented 
-    if (plannedhours < 222) {
+    // TODO: only for testing, real algorythm needs to be implemented
+    if (maxhours < 1) {
       return 'table-danger';
-    } else if (plannedhours < 400) {
+    } else if (maxhours < 2) {
       return 'table-warning';
     }
     return 'table-success';
@@ -71,5 +73,17 @@ export class ProjectTableComponent implements OnInit {
     if (this.week > 1) {
       this.week -= 1;
     }
+  }
+
+  goToWeek() {
+    const inputValue = parseInt((<HTMLInputElement>document.getElementById('weekInput')).value, 0);
+    if (inputValue >= 49) {
+      this.week = 49;
+      return;
+    } else if (inputValue <= 1) {
+      this.week = 1;
+      return;
+    }
+    this.week = inputValue;
   }
 }

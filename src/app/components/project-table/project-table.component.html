@@ -1,111 +1,121 @@
 <div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Project name</th>
-        <th class="text-center" scope="col">Risk</th>
-        <th class="text-center" scope="col">Max [days]</th>
-        <th class="text-center" scope="col">Planned [days]</th>
-        <th class="text-center" scope="col">{{week}}. week</th>
-        <th class="text-center" scope="col">{{week + 1}}. week</th>
-        <th class="text-center" scope="col">{{week + 2}}. week</th>
-        <th class="text-center" scope="col">{{week + 3}}. week</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let projectEl of projects; let i = index;">
-        <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, projectEl.budget)">
-          <th scope="row" (click)="toggleCollapse(i)">{{ projectEl.name }}
-            <i id="collapseIcon{{i}}" class="fa fa-arrow-down" aria-hidden="true"></i>
-          </th>
-          <td class="text-center">{{ projectEl.risk }}</td>
-          <td class="text-center">{{ projectEl.plannedhours }}</td>
-          <td class="text-center">needs calc</td>
-          <td class="text-center">-</td>
-          <td class="text-center">-</td>
-          <td class="text-center">-</td>
-          <td class="text-center">-</td>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Project name</th>
+          <th class="text-center" scope="col">Risk</th>
+          <th class="text-center" scope="col">Max [days]</th>
+          <th class="text-center" scope="col">Planned [days]</th>
+          <th class="text-center" scope="col">{{week}}. week</th>
+          <th class="text-center" scope="col">{{week + 1}}. week</th>
+          <th class="text-center" scope="col">{{week + 2}}. week</th>
+          <th class="text-center" scope="col">{{week + 3}}. week</th>
         </tr>
-        <tr class="table" id="collapse{{i}}" style="display: none">
-          <td colspan="4">
-            <div>Project leader: {{ projectEl.projectleader }}</div>
-            <div>Start date: {{ projectEl.startdate }}</div>
-            <div>Due date: {{ projectEl.duedate }}</div>
-          </td>
-          <td>
-            <ng-container *ngFor="let skill of skills; let i = index;">
-            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex]; let i = index;"> -->
-              <span>{{ skill.name }} </span>
-              <a href="#" ng-click="console.log(2)" class="badge badge-secondary pull-right">
-                <i class="fa fa-minus" aria-hidden="true"></i>
-              </a>
-              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </a>
-              <br>
-            </ng-container>
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong">
-              Add resource
-            </button>
-          </td>
-          <td>
-            <ng-container *ngFor="let skill of skills; let i = index;">
-            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex + 1]; let i = index;"> -->
-              <span>{{ skill.name }} </span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-minus" aria-hidden="true"></i>
-              </a>
-              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </a>
-              <br>
-            </ng-container>
-            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Add resource
-            </button>
-          </td>
-          <td>
-            <ng-container *ngFor="let skill of skills; let i = index;">
-            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex + 2]; let i = index;"> -->
-              <span>{{ skill.name }} </span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-minus" aria-hidden="true"></i>
-              </a>
-              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </a>
-              <br>
-            </ng-container>
-            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Add resource
-            </button>
-          </td>
-          <td>
-            <ng-container *ngFor="let skill of skills; let i = index;">
-            <!-- <ng-container *ngFor="let skill of projectEl.skills[pageIndex + 3]; let i = index;"> -->
-              <span>{{ skill.name }} </span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-minus" aria-hidden="true"></i>
-              </a>
-              <span class="badge badge-pill badge-primary pull-right">{{ skill.number }}</span>
-              <a href="#" class="badge badge-secondary pull-right">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </a>
-              <br>
-            </ng-container>
-            <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
-              Add resource
-            </button>
-          </td>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
-  <hr>
-  <button class="btn btn-success" (click)="decWeek();">Previous</button>
-  <button class="btn btn-success pull-right" (click)="incWeek();">Next</button>
-  <!-- <app-pagination [callback]="showMessage"> </app-pagination> -->
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let projectEl of projects; let i = index;">
+          <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, i)">
+            <th scope="row" (click)="toggleCollapse(i)">{{ projectEl.name }}
+              <i id="collapseIcon{{i}}" class="fa fa-arrow-down" aria-hidden="true"></i>
+            </th>
+            <td class="text-center">{{ projectEl.risk }}</td>
+            <td class="text-center">{{ projectEl.plannedhours }}</td>
+            <td class="text-center">needs calc</td>
+            <td class="text-center">-</td>
+            <td class="text-center">-</td>
+            <td class="text-center">-</td>
+            <td class="text-center">-</td>
+          </tr>
+          <tr class="table" id="collapse{{i}}" style="display: none">
+            <td colspan="4">
+              <div>Project leader: {{ projectEl.projectleader }}</div>
+              <div>Start date: {{ projectEl.startdate }}</div>
+              <div>Due date: {{ projectEl.duedate }}</div>
+            </td>
+            <td>
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week - 1].skills; let i = index;">
+                <span>{{ skill.name }} </span>
+                <a href="#" ng-click="console.log(2)" class="badge badge-secondary pull-right">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </a>
+                <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+                <br>
+              </ng-container>
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+                Add resource
+              </button>
+            </td>
+            <td>
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week].skills; let i = index;">
+                <span>{{ skill.name }} </span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </a>
+                <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+                <br>
+              </ng-container>
+              <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+                Add resource
+              </button>
+            </td>
+            <td>
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 1].skills; let i = index;">
+                <span>{{ skill.name }} </span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </a>
+                <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+                <br>
+              </ng-container>
+              <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+                Add resource
+              </button>
+            </td>
+            <td>
+              <ng-container *ngFor="let skill of projects[i].calendar[0].weeks[this.week + 2].skills; let i = index;">
+                <span>{{ skill.name }} </span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </a>
+                <span class="badge badge-pill badge-primary pull-right">{{ skill.count }}</span>
+                <a href="#" class="badge badge-secondary pull-right">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+                <br>
+              </ng-container>
+              <button type="button" class="btn btn-primary btn-sm bottomaligned" data-toggle="modal" data-target="#exampleModalLong">
+                Add resource
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <button class="btn btn-success col-lg-1" (click)="decWeek();">Previous</button>
+    <span class="col-lg-3"></span>
+    <div class="col-lg-4">
+      <div class="input-group">
+          <span class="input-group-addon">Go to week:</span>
+        <input type="number" class="form-control weekInput" placeholder="0" id="weekInput" aria-label="Number">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" (click)="goToWeek();">Go!</button>
+        </span>
+      </div>
+    </div>
+    <span class="col-lg-3"></span>
+    <button class="btn btn-success pull-right col-lg-1" (click)="incWeek();">Next</button>
+  </div>
 </div>
