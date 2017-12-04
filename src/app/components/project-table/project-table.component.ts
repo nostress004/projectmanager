@@ -9,7 +9,6 @@ import { Skill } from '../../models/Skill';
   templateUrl: './project-table.component.html',
   styleUrls: ['./project-table.component.css']
 })
-
 export class ProjectTableComponent implements OnInit {
   projects = PROJECTS2;
   skills = [
@@ -29,12 +28,9 @@ export class ProjectTableComponent implements OnInit {
 
   week = 1;
 
-
   constructor() {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   toggleCollapse(id) {
     const state = document.getElementById('collapse' + id).style.display;
@@ -88,7 +84,10 @@ export class ProjectTableComponent implements OnInit {
   }
 
   goToWeek() {
-    const inputValue = parseInt((<HTMLInputElement>document.getElementById('weekInput')).value, 0);
+    const inputValue = parseInt(
+      (<HTMLInputElement>document.getElementById('weekInput')).value,
+      0
+    );
     if (inputValue >= 49) {
       this.week = 49;
       return;
@@ -100,16 +99,16 @@ export class ProjectTableComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('weekInput')).value = '';
   }
 
-  sumSkillCounts (project, number) {
+  sumSkillCounts(project, number) {
     const dif = number - 2;
     let sum = 0;
-    for (const skill of project.calendar[0].weeks[this.week  + dif].skills) {
+    for (const skill of project.calendar[0].weeks[this.week + dif].skills) {
       sum += skill.count;
     }
     return sum;
   }
 
-  sumWeekCounts (project) {
+  sumWeekCounts(project) {
     let sum = 0;
     for (let i = 0; i < project.calendar[0].weeks.length; i++) {
       for (const skill of project.calendar[0].weeks[i].skills) {
@@ -120,10 +119,13 @@ export class ProjectTableComponent implements OnInit {
   }
 
   addResource(skills, id1, id2) {
-    const temp = (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value;
+    const temp = (<HTMLInputElement>document.getElementById(
+      'input' + id1 + id2
+    )).value;
     if (temp !== '') {
-      skills.push({count: 1, name: temp});
-      (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value = '';
+      skills.push({ count: 1, name: temp });
+      (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value =
+        '';
     }
   }
 }
