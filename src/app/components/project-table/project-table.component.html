@@ -15,8 +15,8 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let projectEl of projects; let i = index;">
-          <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, sumWeekCounts(projectEl))">
-            <th scope="row" (click)="toggleCollapse(i)">{{ projectEl.name }}
+          <tr [ngClass]="setBackgroundColor(projectEl.plannedhours, sumWeekCounts(projectEl))" (click)="toggleCollapse(i)">
+            <th scope="row">{{ projectEl.name }}
               <i id="collapseIcon{{i}}" class="fa fa-arrow-down" aria-hidden="true"></i>
             </th>
             <td class="text-center">{{ projectEl.risk }}</td>

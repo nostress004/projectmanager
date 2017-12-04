@@ -23,14 +23,14 @@ export const PROJECTS2: Project2[] = [
                             skills: [
                                 { count: 1, name: 'C' },
                                 { count: 2, name: 'Java' },
-                                { count: 2, name: 'C#' }
+                                { count: 5, name: 'C#' }
                             ]
                         },
                         {
                             id: 2,
                             skills: [
                                 { count: 1, name: 'C' },
-                                { count: 2, name: 'Java' },
+                                { count: 4, name: 'Java' },
                                 { count: 2, name: 'Node' }
                             ]
                         },
@@ -39,13 +39,14 @@ export const PROJECTS2: Project2[] = [
                             skills: [
                                 { count: 1, name: 'C' },
                                 { count: 2, name: 'C#' },
-                                { count: 2, name: 'Node' }
+                                { count: 4, name: 'Node' },
+                                { count: 7, name: 'Angular' }
                             ]
                         },
                         {
                             id: 4,
                             skills: [
-                                { count: 1, name: 'C' },
+                                { count: 4, name: 'C' },
                                 { count: 2, name: 'Java' },
                                 { count: 2, name: 'C#' },
                             ]

@@ -103,7 +103,7 @@ export class ProjectTableComponent implements OnInit {
   sumSkillCounts (project, number) {
     const dif = number - 2;
     let sum = 0;
-    for (let skill of project.calendar[0].weeks[this.week  + dif].skills) {
+    for (const skill of project.calendar[0].weeks[this.week  + dif].skills) {
       sum += skill.count;
     }
     return sum;
@@ -112,7 +112,7 @@ export class ProjectTableComponent implements OnInit {
   sumWeekCounts (project) {
     let sum = 0;
     for (let i = 0; i < project.calendar[0].weeks.length; i++) {
-      for (let skill of project.calendar[0].weeks[i].skills) {
+      for (const skill of project.calendar[0].weeks[i].skills) {
         sum += skill.count;
       }
     }
@@ -121,7 +121,9 @@ export class ProjectTableComponent implements OnInit {
 
   addResource(skills, id1, id2) {
     const temp = (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value;
-    skills.push({count: 1, name: temp});
-    (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value = '';
+    if (temp !== '') {
+      skills.push({count: 1, name: temp});
+      (<HTMLInputElement>document.getElementById('input' + id1 + id2)).value = '';
+    }
   }
 }
