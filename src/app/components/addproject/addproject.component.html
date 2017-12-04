@@ -134,7 +134,7 @@
                   </h4>
                   <div *ngFor="let week of year.weeks" class="text-center">
                     <div *ngIf="week.max !==0" class="row">
-                      <div class="col col-lg-4">
+                      <div class="col col-lg-5">
                         <h4 class="card-title">
                           Week: {{week.id}}
                         </h4>
@@ -142,7 +142,7 @@
                       <div class="col col-lg-4">
                         Current: {{week.current}}
                       </div>
-                      <div class="col col-lg-4">
+                      <div class="col col-lg-3">
                         Max: {{week.max}}
                       </div>
                     </div>
@@ -164,11 +164,23 @@
               <ul class="card" style="margin-top:50px">
                 <h4 class="card-title">
                   Skills
-                  <hr>
                 </h4>
-                <div *ngFor="let skill of newProject.skills" class=" card text-center">
-                  <div class="col col-lg-12">
-                    <b>{{skill.skill}}</b> : {{skill.count}}
+                <hr>
+                <div *ngFor="let skill of newProject.skills" class="text-center">
+                  <div class="row">
+                    <div class="col col-lg-3 text-center">
+                      <h4>Skill:</h4>
+                    </div>
+                    <div class="col col-lg-4 text-center">
+                      <b>{{skill.skill}}:</b>
+                    </div>
+                    <div class="col col-lg-1">
+                      {{skill.count}}
+                    </div>
+                    <div class="col col-lg-4 text-center">
+
+                    </div>
+
                   </div>
                 </div>
               </ul>
@@ -186,7 +198,7 @@
   </form>
   <hr>
   <h2>Projects:</h2>
-  <div class="container">
+  <!-- <div class="container">
     <ul class="heroes">
       <li *ngFor="let project of projects" class="card " style="margin-bottom: 20px">
         <h4 class="card-title text-center">
@@ -237,5 +249,36 @@
         </div>
       </li>
     </ul>
+  </div> -->
+  <div class="container">
+    <div class="row " style="margin-left:150px">
+      <div class=" card col col-lg-5 " *ngFor=" let project of projects" style="margin: 25px">
+        <div class="card-block ">
+          <h4 class="card-title ">{{project.name}}</h4>
+        </div>
+        <ul class="list-group list-group-flush ">
+          <li class="list-group-item ">
+            <b>Project leader:</b> &nbsp;{{project.projectleader}}</li>
+          <li class="list-group-item ">
+            <b>Company: </b> &nbsp; {{project.company}}</li>
+          <li class="list-group-item ">
+            <b>Budget:</b> &nbsp; {{project.budget}}
+            <i>USD</i>
+          </li>
+          <li class="list-group-item ">
+            <b>ID:</b> &nbsp; {{project.id}}</li>
+        </ul>
+        <div class="card-block text-center ">
+          <button class="btn btn-primary" (click)="onEdit(project)">
+            <b>Edit</b>
+          </button>
+
+          <button class="btn btn-danger" (click)="onDelete(project)">
+            <b>Delete</b>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
   </div>
-</div>

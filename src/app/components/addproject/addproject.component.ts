@@ -50,6 +50,7 @@ export class AddProjectComponent implements OnInit {
       startdate: null,
       duedate: null,
       plannedhours: null,
+      currenthours: null,
       budget: 0,
       calendar: [{ id: 2017, weeks: null }],
       skills: [],
@@ -111,6 +112,7 @@ export class AddProjectComponent implements OnInit {
         startdate: this.newProject.startdate,
         duedate: this.newProject.duedate,
         plannedhours: this.newProject.plannedhours,
+        currenthours: this.newProject.currenthours,
         budget: this.newProject.budget,
         calendar: this.newProject.calendar,
         skills: this.newProject.skills,
@@ -132,6 +134,7 @@ export class AddProjectComponent implements OnInit {
       project.startdate = this.newProject.startdate;
       project.duedate = this.newProject.duedate;
       project.plannedhours = this.newProject.plannedhours;
+      project.currenthours = this.newProject.currenthours;
       project.budget = this.newProject.budget;
       project.calendar = this.newProject.calendar;
       project.skills = this.newProject.skills;
@@ -147,6 +150,7 @@ export class AddProjectComponent implements OnInit {
       this.newProject.startdate = project.startdate;
       this.newProject.duedate = project.duedate;
       this.newProject.plannedhours = project.plannedhours;
+      this.newProject.currenthours = project.currenthours;
       this.newProject.budget = project.budget;
       this.newProject.calendar = project.calendar;
       this.newProject.skills = project.skills;

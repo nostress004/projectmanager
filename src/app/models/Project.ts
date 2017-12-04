@@ -10,6 +10,7 @@ export interface Project {
   startdate: number;
   duedate: number;
   plannedhours: number;
+  currenthours: number;
   budget: number;
   calendar: Year[];
   skills: { count: number; skill: string }[];
