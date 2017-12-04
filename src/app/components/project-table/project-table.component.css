@@ -1,23 +1,15 @@
-/* td {
-    text-align: center;
-}
-
-th {
-    text-align: center;
-} */
-
-td li {
+/* td li {
   list-style-type: none;
   text-align: left;
-}
+} */
 
-.bottomaligned {
-  /* position: absolute; */
-  
-  bottom: 0;
-  display: table-cell;
-}
-
-table tr td {
+/* table tr td {
   position: relative;
+} */
+
+.inputSm {
+  width: 80px;
+  border: 2px solid #5cb85c;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }

@@ -10,7 +10,7 @@ export const RESOURCES: Resource[] = [
     company: 'BME',
     phone: 2222,
     occupacity: [],
-    skills: ['JavaScript'],
+    skills: ['JavaScript', 'C'],
     calendar: null
   },
   {
