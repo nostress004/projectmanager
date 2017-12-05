@@ -11,6 +11,7 @@ export interface Project2 {
   startdate: number;
   duedate: number;
   plannedhours: number;
+  currenthours: number;
   budget: number;
   calendar: Year2[];
   skills: Skill[];

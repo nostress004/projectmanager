@@ -1,15 +1,14 @@
 import { NgForm } from '@angular/forms';
-
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Project } from '../../models/Project';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Week } from '../../models/Week';
-import { PROJECTS } from '../../mockdata/mock-projects';
+import { Project2 } from '../../models/Project2';
+import { Week2 } from '../../models/Week2';
+import { Skill } from '../../models/Skill';
+import { PROJECTS2 } from '../../mockdata/mock-projects2';
 import { CALENDAR } from '../../mockdata/mock-calendar';
 import { RESOURCES } from '../../mockdata/mock-resources';
-
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addproject',
@@ -17,14 +16,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./addproject.component.css']
 })
 export class AddProjectComponent implements OnInit {
-  projects = PROJECTS;
+  projects = PROJECTS2;
   calendar = CALENDAR;
   resources = RESOURCES;
   resourceCount: number = 0;
-  skills = [''];
+  skills: Skill[] = [];
   editing: boolean = false;
 
-  newProject: Project;
+  newProject: Project2;
 
   constructor() {}
 
@@ -33,14 +32,19 @@ export class AddProjectComponent implements OnInit {
   }
 
   initProject() {
-    var weeks: Week[] = [];
+    var weeks: Week2[] = [];
 
     for (var i: number = 1; i < 53; i++) {
-      var tmp: Week = { id: i, current: 0, max: 0 };
+      var tmp: Week2 = {
+        id: i,
+        skills: [{ count: 0, name: '' }],
+        current: 0,
+        required: 0
+      };
       weeks.push(tmp);
     }
 
-    this.skills = [''];
+    this.skills = [];
     this.newProject = {
       id: 0,
       name: '',
@@ -68,20 +72,20 @@ export class AddProjectComponent implements OnInit {
     if (50 > this.resourceCount) this.resourceCount++;
   }
 
-  onRequirementAdd() {
+  onAddSkill() {
     var DropdownList = document.getElementById(
         'skillselect'
       ) as HTMLSelectElement,
       SelectedIndex = DropdownList.selectedIndex,
       str: string = DropdownList.options[SelectedIndex].value,
-      indexOfElement = this.newProject.skills.findIndex(i => i.skill === str);
+      indexOfElement = this.skills.findIndex(i => i.name === str);
 
     if (indexOfElement > -1) {
-      this.newProject.skills.splice(indexOfElement, 1);
+      this.skills.splice(indexOfElement, 1);
     }
-    this.newProject.skills.push({
+    this.skills.push({
       count: this.resourceCount,
-      skill: str
+      name: str
     });
   }
 
@@ -91,8 +95,12 @@ export class AddProjectComponent implements OnInit {
       i < this.newProject.duedate;
       i++
     ) {
-      this.newProject.calendar[0].weeks[i].max = this.newProject.plannedhours;
+      this.newProject.calendar[0].weeks[
+        i
+      ].required = this.newProject.plannedhours;
+      this.newProject.calendar[0].weeks[i].skills = this.skills;
     }
+    this.skills = [];
   }
 
   onAddProject() {
@@ -164,6 +172,17 @@ export class AddProjectComponent implements OnInit {
       if (this.projects[i].id == project.id) {
         this.projects.splice(i, 1);
       }
+    }
+  }
+
+  onRemoveSkill(skill) {
+    console.log(skill);
+    var indexOfElement: number = this.skills.findIndex(
+      i => i.name === skill.name
+    );
+
+    if (indexOfElement > -1) {
+      this.skills.splice(indexOfElement, 1);
     }
   }
 }
