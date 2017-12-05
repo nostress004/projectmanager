@@ -35,11 +35,11 @@ export class ResourceTableComponent implements OnInit {
     }
   }
 
-  setBackgroundColor(plannedhours, maxhours) {
+  setBackgroundColor(max, current) {
     // TODO: only for testing, real algorythm needs to be implemented
-    if (plannedhours < 1) {
+    if (current > max) {
       return 'table-danger';
-    } else if (plannedhours < 2) {
+    } else if (current === max) {
       return 'table-warning';
     }
     return 'table-success';
@@ -67,5 +67,30 @@ export class ResourceTableComponent implements OnInit {
       return;
     }
     this.week = inputValue;
+  }
+
+  incHours(week) {
+    week.current += 1;
+  }
+
+  decHours(week) {
+    if (week.current > 0) {
+      week.current -= 1;
+    }
+  }
+
+  sumHoursMax(resource) {
+    let sum = 0;
+    for (const week of resource.calendar[0].weeks) {
+      sum += week.max;
+    }
+    return sum;
+  }
+  sumHoursCurrent(resource) {
+    let sum = 0;
+    for (const week of resource.calendar[0].weeks) {
+      sum += week.current;
+    }
+    return sum;
   }
 }
