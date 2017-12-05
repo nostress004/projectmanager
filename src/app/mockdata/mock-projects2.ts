@@ -273,7 +273,7 @@ export const PROJECTS2: Project2[] = [
   },
 
   {
-    id: 0,
+    id: 2,
     name: 'My little project 3',
     projectleader: 'Simicska Lajos',
     company: 'EU',

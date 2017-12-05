@@ -11,7 +11,72 @@ export const RESOURCES: Resource[] = [
     phone: 2222,
     occupacity: [],
     skills: ['JavaScript', 'C'],
-    calendar: null
+    calendar: [
+      {
+        id: 2017, weeks: [
+          {
+            id: 1,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 2,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 3,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 4,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 5,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 6,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 7,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 8,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 9,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 10,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 11,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 12,
+            max: 40,
+            current: 40
+          }
+        ]
+      }
+    ],
   },
   {
     id: 1,
@@ -23,7 +88,72 @@ export const RESOURCES: Resource[] = [
     phone: 233,
     occupacity: [],
     skills: ['Nothing Really'],
-    calendar: null
+    calendar: [
+      {
+        id: 2017, weeks: [
+          {
+            id: 1,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 2,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 3,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 4,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 5,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 6,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 7,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 8,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 9,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 10,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 11,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 12,
+            max: 40,
+            current: 40
+          }
+        ]
+      }
+    ],
   },
   {
     id: 2,
@@ -35,6 +165,71 @@ export const RESOURCES: Resource[] = [
     phone: 6666,
     occupacity: [],
     skills: ['C++'],
-    calendar: null
+    calendar: [
+      {
+        id: 2017, weeks: [
+          {
+            id: 1,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 2,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 3,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 4,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 5,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 6,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 7,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 8,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 9,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 10,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 11,
+            max: 40,
+            current: 40
+          },
+          {
+            id: 12,
+            max: 40,
+            current: 40
+          }
+        ]
+      }
+    ],
   }
 ];
