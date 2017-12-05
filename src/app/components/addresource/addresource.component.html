@@ -164,39 +164,33 @@
     </div>
   </div>
   <hr>
-  <h2>Resources:</h2>
-  <div class="container">
-    <ul class="heroes">
-      <li *ngFor="let resource of resources" class="card text-center" style="margin-bottom: 20px">
-        <h4 class="card-title">
-          {{resource.firstname}} {{resource.lastname}}
-        </h4>
-        <p class="card-text"> Email: {{resource.email}}</p>
-        <p class="card-text"> Phone: {{resource.phone}}</p>
-        <p class="card-text"> ID: {{resource.id}}</p>
-        <div class="card">
-          <b>Skills:</b>
-          <div *ngFor="let skill of resource.skills" class="text-center">
-            -{{skill}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-lg-3">
-          </div>
-          <div class="col col-lg-3">
-            <button class="btn btn-primary" (click)="onEdit(resource)">
-              <b>Edit</b>
-            </button>
-          </div>
-          <div class="col col-lg-3">
-            <button class="btn btn-danger" (click)="onDelete(resource)">
-              <b>Delete</b>
-            </button>
-          </div>
-          <div class="col col-lg-3">
-          </div>
-        </div>
-      </li>
-    </ul>
+</div>
+
+<div class="container">
+  <h2>Projects:</h2>
+  <div class="row " style="margin-left:150px">
+    <div class=" card col col-lg-5 " *ngFor=" let resource of resources" style="margin: 25px">
+      <div class="card-block ">
+        <h4 class="card-title ">{{resource.firstname}} &nbsp; {{resource.lastname}}</h4>
+      </div>
+      <ul class="list-group list-group-flush ">
+        <li class="list-group-item ">
+          <b>E-mail:</b> &nbsp;{{resource.email}}</li>
+        <li class="list-group-item ">
+          <b>Phone: </b> &nbsp; {{resource.phone}}</li>
+        <li class="list-group-item ">
+          <b>Company:</b> &nbsp; {{resource.company}}
+        </li>
+        <li class="list-group-item ">
+          <b>ID:</b> &nbsp; {{resource.id}}</li>
+      </ul>
+      <div class="card-block text-center ">
+        <button class="btn btn-danger" (click)="onDelete(project)">
+          <b>Delete</b>
+        </button>
+      </div>
+
+    </div>
   </div>
+
 </div>

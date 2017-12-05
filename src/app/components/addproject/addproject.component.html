@@ -168,17 +168,13 @@
           <li class="list-group-item ">
             <b>Company: </b> &nbsp; {{project.company}}</li>
           <li class="list-group-item ">
-            <b>Budget:</b> &nbsp; {{project.budget}}
-            <i>USD</i>
+            <b>Budget:</b> &nbsp; &#36;{{project.budget}}
+
           </li>
           <li class="list-group-item ">
             <b>ID:</b> &nbsp; {{project.id}}</li>
         </ul>
         <div class="card-block text-center ">
-          <button class="btn btn-primary" (click)="onEdit(project)">
-            <b>Edit</b>
-          </button>
-
           <button class="btn btn-danger" (click)="onDelete(project)">
             <b>Delete</b>
           </button>
