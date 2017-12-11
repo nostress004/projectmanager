@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationComponent } from '../pagination/pagination.component';
-import { PROJECTS } from '../../mockdata/mock-projects';
 import { PROJECTS2 } from '../../mockdata/mock-projects2';
 import { Skill } from '../../models/Skill';
 

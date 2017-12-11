@@ -17,28 +17,16 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 // Service Imports
 import { AddProjectComponent } from './components/addproject/addproject.component';
 import { AddresourceComponent } from './components/addresource/addresource.component';
-import { ResourceComponent } from './components/resource/resource.component';
-import { ResourceListComponent } from './components/resource-list/resource-list.component';
 
-import { QuestionService } from './services/question.service';
 import { ResourceTableComponent } from './components/resource-table/resource-table.component';
 import { ProjectTableComponent } from './components/project-table/project-table.component';
-import { ResourceDashboardComponent } from './components/resource-dashboard/resource-dashboard.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
-import { ProjectTableRowComponent } from './components/project-table-row/project-table-row.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'addproject', component: AddProjectComponent },
   { path: 'addresource', component: AddresourceComponent },
   { path: 'resourcetable', component: ResourceTableComponent }
@@ -57,20 +45,11 @@ export const firebaseConfig = {
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    SidebarComponent,
-    LoginComponent,
-    RegisterComponent,
-    SettingsComponent,
     PageNotFoundComponent,
     AddProjectComponent,
     AddresourceComponent,
-    ResourceComponent,
-    ResourceListComponent,
     ResourceTableComponent,
     ProjectTableComponent,
-    ResourceDashboardComponent,
-    PaginationComponent,
-    ProjectTableRowComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +59,7 @@ export const firebaseConfig = {
     MultiselectDropdownModule,
     ReactiveFormsModule
   ],
-  providers: [AngularFireAuth, AngularFireDatabase, QuestionService],
+  providers: [AngularFireAuth, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

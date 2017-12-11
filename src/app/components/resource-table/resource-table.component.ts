@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationComponent } from '../pagination/pagination.component';
 import { RESOURCES } from '../../mockdata/mock-resources';
 
 @Component({

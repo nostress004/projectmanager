@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Resource } from '../../models/Resource';
-import { ResourceListComponent } from '../resource-list/resource-list.component';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 
 import { Week } from '../../models/Week';
