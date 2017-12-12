@@ -9,20 +9,6 @@ import { Skill } from '../../models/Skill';
 })
 export class ProjectTableComponent implements OnInit {
   projects = PROJECTS2;
-  skills = [
-    {
-      name: 'C',
-      number: 2
-    },
-    {
-      name: 'B',
-      number: 3
-    },
-    {
-      name: 'D',
-      number: 4
-    }
-  ];
 
   week = 1;
 
@@ -40,7 +26,6 @@ export class ProjectTableComponent implements OnInit {
       document.getElementById('collapseIcon' + id).className =
         'fa fa-arrow-down';
     }
-    const i = this.projects[0].calendar[0].weeks[this.week].skills;
   }
 
   setBackgroundColor(plannedhours, maxhours) {
