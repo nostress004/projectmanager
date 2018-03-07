@@ -1,0 +1,11 @@
+C:\Users\Ádám\Desktop\projectmanager\bin\Debug\netcoreapp2.0\projectmanager.deps.json
+C:\Users\Ádám\Desktop\projectmanager\bin\Debug\netcoreapp2.0\projectmanager.runtimeconfig.json
+C:\Users\Ádám\Desktop\projectmanager\bin\Debug\netcoreapp2.0\projectmanager.runtimeconfig.dev.json
+C:\Users\Ádám\Desktop\projectmanager\bin\Debug\netcoreapp2.0\projectmanager.dll
+C:\Users\Ádám\Desktop\projectmanager\bin\Debug\netcoreapp2.0\projectmanager.pdb
+C:\Users\Ádám\Desktop\projectmanager\obj\Debug\netcoreapp2.0\projectmanager.csprojResolveAssemblyReference.cache
+C:\Users\Ádám\Desktop\projectmanager\obj\Debug\netcoreapp2.0\projectmanager.csproj.CoreCompileInputs.cache
+C:\Users\Ádám\Desktop\projectmanager\obj\Debug\netcoreapp2.0\projectmanager.AssemblyInfoInputs.cache
+C:\Users\Ádám\Desktop\projectmanager\obj\Debug\netcoreapp2.0\projectmanager.AssemblyInfo.cs
+C:\Users\Ádám\Desktop\projectmanager\obj\Debug\netcoreapp2.0\projectmanager.dll
+C:\Users\Ádám\Desktop\projectmanager\obj\Debug\netcoreapp2.0\projectmanager.pdb

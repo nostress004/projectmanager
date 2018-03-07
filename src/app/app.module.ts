@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+// 
+import { HttpModule } from '@angular/http';
+import { AppService } from './app.service';
+
 // Other Imports
 
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
@@ -18,6 +22,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 // Service Imports
 import { AddProjectComponent } from './components/addproject/addproject.component';
 import { AddresourceComponent } from './components/addresource/addresource.component';
@@ -57,9 +62,10 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     FormsModule,
     MultiselectDropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [AngularFireAuth, AngularFireDatabase],
+  providers: [AngularFireAuth, AngularFireDatabase, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
